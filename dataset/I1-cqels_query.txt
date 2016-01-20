@@ -1,0 +1,13 @@
+Select ?loc ?avgPollution
+From <KB>
+Where {
+?pol1Evt a sao:StreamData.
+?pol2Evt a sao:StreamData.
+?pol3Evt a sao:StreamData.
+?locEvt a sao:StreamData.
+Stream<LocationStreamUrl> {?locId a ?locEvt. ?locId sao:value ?loc. }
+Stream<Seg1PollutionStreamUrl> {?pol1Id a ?pol1Evt. ?pol1Id sao:value ?pol1. }
+Stream<Seg2PollutionStreamUrl> {?pol2Id a ?pol2Evt. ?pol2Id sao:value ?pol2. }
+Stream<Seg3PollutionStreamUrl> {?pol3Id a ?pol3Evt. ?pol3Id sao:value ?pol3. }
+Bind ((?pol1+?pol2+?pol3)/3 as ?avgPollution)
+}

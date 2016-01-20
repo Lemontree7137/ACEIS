@@ -1,0 +1,2 @@
+### SPARQL endpoint: http://iot.ee.surrey.ac.uk:8890/sparql
+PREFIX ssn: <http://purl.oclc.org/NET/ssnx/ssn#>PREFIX sao: <http://purl.oclc.org/NET/UNIS/sao/sao#> select ?p ?sLat ?sLong ?eLat ?eLong where {?x ssn:observes ?p. ?p ssn:isPropertyOf ?foi. ?foi sao:beginsAtLocation ?start.?foi sao:endsAtLocation ?end.?start geo:lat ?sLat. ?start geo:long ?sLong.?end geo:lat ?eLat. ?end geo:long ?eLong. } LIMIT 20

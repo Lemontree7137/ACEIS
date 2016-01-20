@@ -1,0 +1,13 @@
+Select ?loc ?bus1Temp ?bus1Vacancy ?bus2Temp ?bus2Vacancy ?bus3Temp ?bus3Vacancy 
+From <KB>
+Where {
+?bus1Report a sao:StreamData.
+?bus1Report a sao:StreamData.
+?bus1Report a sao:StreamData.
+?locEvt a sao:StreamData
+Stream<LocationStreamUrl> {?locId a ?locEvt. ?locId sao:value ?loc. }
+Stream<bus1ReportUrl> {?bus1ReportId a ?bus1Report. ?bus1ReportId sao:value ?bus1Temp. ?bus1Temp a prop:Temperature. ?bus1Vacancy a prop:VacancyCount. }
+Stream<bus2ReportUrl> {?bus2ReportId a ?bus2Report. ?bus2ReportId sao:value ?bus2Temp. ?bus2Temp a prop:Temperature. ?bus2Vacancy a prop:VacancyCount. }
+Stream<bus3ReportUrl> {?bus3ReportId a ?bus3Report. ?bus3ReportId sao:value ?bus3Temp. ?bus3Temp a prop:Temperature. ?bus3Vacancy a prop:VacancyCount. }
+
+}

@@ -1,0 +1,6 @@
+prefix : <http://www.insight-centre.org/dataset/SampleEventService#> prefix emvo: <http://sense.deri.ie/vocab/emvo#> prefix owlssp: <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> prefix ces: <http://www.insight-centre.org/ces#> prefix owls: <http://www.daml.org/services/owl-s/1.2/Service.owl#> prefix ct: <http://www.insight-centre.org/citytraffic#> prefix muo: <http://purl.oclc.org/NET/muo/ucum/> prefix up: <http://www.ict-citypulse.eu/ontologies/userprofile#> prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> prefix sao: <http://purl.oclc.org/NET/sao/> prefix q: <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> prefix owlssc: <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> prefix xsd: <http://www.w3.org/2001/XMLSchema#> prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> prefix osm: <http://www.insight-centre.org/ontologies/osm#> 
+Select ?v1 ?v2 
+  where 
+{ stream <http://www.insight-centre.org/dataset/SampleEventService#216> [now]  {?ob1 rdf:type ?ob. ?ob1 ssn:observedBy ?sensor1. ?ob1 sao:hasValue ?v1.  } 
+  stream <http://www.insight-centre.org/dataset/SampleEventService#214> [now]  {?ob2 rdf:type ?ob. ?ob2 ssn:observedBy ?sensor2. ?ob2 sao:hasValue ?v2.  } 
+ filter (?v2 < 20)}

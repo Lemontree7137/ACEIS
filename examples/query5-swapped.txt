@@ -1,0 +1,59 @@
+{
+        "ep" : {
+                "eds" : [{
+                                "distance" : 0,
+                                "eventType" : "Aarhus_Road_Traffic",
+                                "foi" : "10.2466425276,56.2091396303-10.2133329301,56.2102373869",
+                                "nodeId" : "http://ict-citypulse.eu/PrimitiveEventService-74591e42-8d1d-42c8-a357-3205171d89f5"
+                        }, {
+                                "distance" : 0,
+                                "eventType" : "Aarhus_Road_Traffic",
+                                "foi" : "10.1869446944,56.1457221852-10.1836794663,56.1498479048",
+                                "nodeId" : "http://ict-citypulse.eu/PrimitiveEventService-eadb1d2b-8a31-4e74-a4f0-70c51d0f68b8-sim2"
+                        }
+                ],
+                "eos" : [{
+                                "cardinality" : 1,
+                                "ID" : "EO91d2984a",
+                                "opt" : "and"
+                        }
+                ],
+                "filters" : {},
+                "ID" : "EP-http://www.insight-centre.org/dataset/SampleEventService#SimService-1866b549-1552-48a3-b3c8-20eb631ff2ca",
+                "idCnt" : "0",
+                "isQuery" : true,
+                "provenanceMap" : {
+                        "EO91d2984a" : ["http://ict-citypulse.eu/PrimitiveEventService-74591e42-8d1d-42c8-a357-3205171d89f5", "http://ict-citypulse.eu/PrimitiveEventService-eadb1d2b-8a31-4e74-a4f0-70c51d0f68b8-sim2"]
+                },
+                "selections" : [{
+                                "propertyName" : "pName-0a30134f-c0df-43c2-bb7b-01b6237edbba",
+                                "providedBy" : "http://ict-citypulse.eu/PrimitiveEventService-74591e42-8d1d-42c8-a357-3205171d89f5",
+                                "foi" : "10.2466425276,56.2091396303-10.2133329301,56.2102373869",
+                                "propertyType" : "http://ict-citypulse.eu/city#AverageSpeed",
+                                "originalED" : {
+                                        "distance" : 0,
+                                        "eventType" : "Aarhus_Road_Traffic",
+                                        "foi" : "10.2466425276,56.2091396303-10.2133329301,56.2102373869",
+                                        "nodeId" : "http://ict-citypulse.eu/PrimitiveEventService-74591e42-8d1d-42c8-a357-3205171d89f5"
+                                }
+                        }, {
+                                "propertyName" : "pName-be8320f0-815c-4ef1-82e2-dce0031ee077",
+                                "providedBy" : "http://ict-citypulse.eu/PrimitiveEventService-eadb1d2b-8a31-4e74-a4f0-70c51d0f68b8-sim2",
+                                "foi" : "10.1869446944,56.1457221852-10.1836794663,56.1498479048",
+                                "propertyType" : "http://ict-citypulse.eu/city#AverageSpeed",
+                                "originalED" : {
+                                        "distance" : 0,
+                                        "eventType" : "Aarhus_Road_Traffic",
+                                        "foi" : "10.1869446944,56.1457221852-10.1836794663,56.1498479048",
+                                        "nodeId" : "http://ict-citypulse.eu/PrimitiveEventService-eadb1d2b-8a31-4e74-a4f0-70c51d0f68b8-sim2"
+                                }
+                        }
+                ],
+                "temporalMap" : {},
+                "timeWindow" : 3000,
+                "trafficDemand" : 0
+        },
+        "aggOp" : "avg",
+        "continuous" : true,
+        "engineType" : "CQELS"
+}

@@ -1,0 +1,121 @@
+@prefix :        <http://www.insight-centre.org/dataset/SampleEventService#> .
+@prefix prov:    <http://purl.org/NET/provenance.owl#> .
+@prefix tl:      <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix emvo:    <http://sense.deri.ie/vocab/emvo#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix ces:     <http://www.insight-centre.org/ces#> .
+@prefix ct:      <http://www.insight-centre.org/citytraffic#> .
+@prefix owls:    <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix up:      <http://www.ict-citypulse.eu/ontologies/userprofile#> .
+@prefix muo:     <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sao:     <http://purl.oclc.org/NET/sao/> .
+@prefix sce1:    <http://ict-citypulse.eu/experiments/Scenario1/> .
+@prefix q:       <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix osm:     <http://www.insight-centre.org/ontologies/osm#> .
+@prefix qoi:     <http://ict-citypulse.eu/ontologies/StreamQoI/> .
+
+:CES-CCP-54clone-Profile
+      a       ces:EventProfile ;
+      ces:hasPattern
+              [ a       rdf:Bag , ces:And ;
+                rdf:_1  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#226-sim5"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#226-sim5>
+                        ] ;
+                rdf:_2  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#322-sim0"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#322-sim0>
+                        ] ;
+                rdf:_3  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#218-sim4"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#218-sim4>
+                        ] ;
+                rdf:_4  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#SimService-6a837474-daf9-44f6-9c12-a239ab457a66"^^xsd:string ;
+                          ces:hasService :SimService-6a837474-daf9-44f6-9c12-a239ab457a66
+                        ] ;
+                rdf:_5  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#537-sim1"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#537-sim1>
+                        ] ;
+                rdf:_6  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#216-sim4"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#216-sim4>
+                        ] ;
+                rdf:_7  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#540-sim6"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#540-sim6>
+                        ] ;
+                rdf:_8  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#230-sim3"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#230-sim3>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#230-sim3" ;
+                          ces:selectedProperty
+                                  :Property-bd2d8796-5076-4285-ad67-d4fca824aef5
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#322-sim0" ;
+                          ces:selectedProperty
+                                  :Property-81abead2-730e-46cc-8920-85c9823113ae
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#540-sim6" ;
+                          ces:selectedProperty
+                                  :Property-4c3e1955-9ef8-4585-889d-11bcb1d1d545
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#537-sim1" ;
+                          ces:selectedProperty
+                                  :Property-8d812886-820c-4d80-97b7-10e284d9b245
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#226-sim5" ;
+                          ces:selectedProperty
+                                  :Property-957c43a8-2c0f-42d3-8f82-69c5dee16f11
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#216-sim4" ;
+                          ces:selectedProperty
+                                  :Property-4556ba67-a029-4aff-9e30-89a1f548ae8c
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#SimService-6a837474-daf9-44f6-9c12-a239ab457a66" ;
+                          ces:selectedProperty
+                                  :Property-66b8fa48-6cea-447b-9bc9-dde7c12b7f79
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#218-sim4" ;
+                          ces:selectedProperty
+                                  :Property-decf787f-aeaa-459d-9957-3820aa634d27
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "http://www.insight-centre.org/dataset/SampleEventService#SimService-6a837474-daf9-44f6-9c12-a239ab457a66" ;
+                          ces:selectedProperty
+                                  :Property-818d21f4-9cb3-4243-821c-ac1e5e5006f5
+                        ]
+              ] .
+
+:CES-CCP-54clone
+      a       ces:ComplexEventService ;
+      owls:presents :CES-CCP-54clone-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService :CES-CCP-54clone
+              ] .

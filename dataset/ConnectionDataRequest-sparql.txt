@@ -1,0 +1,25 @@
+@prefix : <http://www.insight-centre.org/SampleEventService#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ces: <http://www.insight-centre.org/ces#> .
+@prefix owls:  <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix owls-g:  <http://www.daml.org/services/owl-s/1.2/Grounding.owl#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix geo: <http://www.insight-centre.org/geolocations#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix emvo:  <http://sense.deri.ie/vocab/emvo#> .
+@prefix muo:   <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix ct:    <http://www.insight-centre.org/citytraffic#> .
+
+DESCRIBE ?x ?y 
+WHERE{	?x a osm:Way. ?y a ct:CongestionLevel.
+	?x osm:hasTransportationType "Car"^^xsd:String.
+	?x osm:hasAreaName "District1"^^xsd:String.
+	_a a ssn:Observation. _a observedProperty ?y.
+	_a ssn:featureOfInterest _b. _b ct:onWay ?x.
+	_a ssn:observationResult _c. Filter (_c > 10)
+}

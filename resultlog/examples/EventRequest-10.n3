@@ -1,0 +1,381 @@
+@prefix :        <http://www.insight-centre.org/dataset/SampleEventService#> .
+@prefix prov:    <http://purl.org/NET/provenance.owl#> .
+@prefix tl:      <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix emvo:    <http://sense.deri.ie/vocab/emvo#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix ces:     <http://www.insight-centre.org/ces#> .
+@prefix ct:      <http://www.insight-centre.org/citytraffic#> .
+@prefix owls:    <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix up:      <http://www.ict-citypulse.eu/ontologies/userprofile#> .
+@prefix muo:     <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sao:     <http://purl.oclc.org/NET/sao/> .
+@prefix sce1:    <http://ict-citypulse.eu/experiments/Scenario1/> .
+@prefix q:       <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix osm:     <http://www.insight-centre.org/ontologies/osm#> .
+@prefix qoi:     <http://ict-citypulse.eu/ontologies/StreamQoI/> .
+
+<FoI-aa707a12-6eca-40bf-a344-e1dda1b61e64>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.13203209461566"^^xsd:double ;
+      ct:hasEndLongitude "10.157658842922274"^^xsd:double ;
+      ct:hasStartLatitude "56.125743621869944"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.15788067857352"^^xsd:double .
+
+<Property-1f058aa2-da5e-424b-90a5-436839b065f3>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-4323341f-15e3-4a48-8aa5-8a1076db15d1> .
+
+<Property-2c2e5b84-4e1f-4b40-a96f-64a0706dfb37>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-60695e59-13e5-41b3-9446-4183d7bbd9be> .
+
+<Property-5c1e3609-c67d-48a2-887f-44fdd7877fbb>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-aa707a12-6eca-40bf-a344-e1dda1b61e64> .
+
+:SampleRequest a ces:EventRequest;
+	owls:presents :DummyService-f56485d2-e3d8-4551-a49c-1f690642162a-Profile .
+
+
+:DummyService-f56485d2-e3d8-4551-a49c-1f690642162a-Profile
+      ces:hasPattern
+              [ a       rdf:Bag , ces:And ;
+                rdf:_1  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-a3c82fad-bd46-45f6-bc86-79a7ce158a32"^^xsd:string ;
+                          ces:hasService :ED-a3c82fad-bd46-45f6-bc86-79a7ce158a32
+                        ] ;
+                rdf:_2  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-feda5472-5362-4055-9ba0-4dc9a8a36fcf"^^xsd:string ;
+                          ces:hasService :ED-feda5472-5362-4055-9ba0-4dc9a8a36fcf
+                        ] ;
+                rdf:_3  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-92ade205-25fe-417d-955b-a9790802902b"^^xsd:string ;
+                          ces:hasService :ED-92ade205-25fe-417d-955b-a9790802902b
+                        ] ;
+                rdf:_4  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-bde8c6f4-a0a7-4d11-be45-946dae16ace7"^^xsd:string ;
+                          ces:hasService :ED-bde8c6f4-a0a7-4d11-be45-946dae16ace7
+                        ] ;
+                rdf:_5  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-684b9e45-dee9-4582-b6bb-1421e46b13d3"^^xsd:string ;
+                          ces:hasService :ED-684b9e45-dee9-4582-b6bb-1421e46b13d3
+                        ] ;
+                rdf:_6  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-14068e52-d283-486e-9967-faadd67988d8"^^xsd:string ;
+                          ces:hasService :ED-14068e52-d283-486e-9967-faadd67988d8
+                        ] ;
+                rdf:_7  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-b3050615-c9f3-4d7b-83c2-d94b30f4b095"^^xsd:string ;
+                          ces:hasService :ED-b3050615-c9f3-4d7b-83c2-d94b30f4b095
+                        ] ;
+                rdf:_8  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-2110f159-3c9a-45dd-882b-7fae93ea4e50"^^xsd:string ;
+                          ces:hasService :ED-2110f159-3c9a-45dd-882b-7fae93ea4e50
+                        ] ;
+                rdf:_9  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-a7301123-322b-42de-b06e-8d814968efdb"^^xsd:string ;
+                          ces:hasService :ED-a7301123-322b-42de-b06e-8d814968efdb
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-684b9e45-dee9-4582-b6bb-1421e46b13d3" ;
+                          ces:selectedProperty
+                                  <Property-1822519d-1f07-4898-8a27-69c323650fa3>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-feda5472-5362-4055-9ba0-4dc9a8a36fcf" ;
+                          ces:selectedProperty
+                                  <Property-5c8438fd-d52d-4012-93b3-82bc394707b0>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-92ade205-25fe-417d-955b-a9790802902b" ;
+                          ces:selectedProperty
+                                  <Property-5c1e3609-c67d-48a2-887f-44fdd7877fbb>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-bde8c6f4-a0a7-4d11-be45-946dae16ace7" ;
+                          ces:selectedProperty
+                                  <Property-87d6ee46-d4f6-4d01-87ae-686acd9935c6>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-a7301123-322b-42de-b06e-8d814968efdb" ;
+                          ces:selectedProperty
+                                  <Property-1f058aa2-da5e-424b-90a5-436839b065f3>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-2110f159-3c9a-45dd-882b-7fae93ea4e50" ;
+                          ces:selectedProperty
+                                  <Property-fd8ed774-d45d-473c-9b5c-f2129b003551>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-a3c82fad-bd46-45f6-bc86-79a7ce158a32" ;
+                          ces:selectedProperty
+                                  <Property-7ee82701-b989-4983-bd05-62a5283de028>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-b3050615-c9f3-4d7b-83c2-d94b30f4b095" ;
+                          ces:selectedProperty
+                                  <Property-2c2e5b84-4e1f-4b40-a96f-64a0706dfb37>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-14068e52-d283-486e-9967-faadd67988d8" ;
+                          ces:selectedProperty
+                                  <Property-2ba1f7fe-f541-442c-b751-0a4890e9f582>
+                        ]
+              ] .
+
+:ED-a3c82fad-bd46-45f6-bc86-79a7ce158a32
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-7ee82701-b989-4983-bd05-62a5283de028> ;
+      owls:presents :ED-a3c82fad-bd46-45f6-bc86-79a7ce158a32-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+<FoI-a9577956-3941-4d9e-bef9-376c9a133c23>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.16018043015113"^^xsd:double ;
+      ct:hasEndLongitude "10.143520804893456"^^xsd:double ;
+      ct:hasStartLatitude "56.148242094184255"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.149874309192683"^^xsd:double .
+
+<Property-5c8438fd-d52d-4012-93b3-82bc394707b0>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-fda22fec-0840-4931-9a97-b82d769942bd> .
+
+:ED-bde8c6f4-a0a7-4d11-be45-946dae16ace7
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-87d6ee46-d4f6-4d01-87ae-686acd9935c6> ;
+      owls:presents :ED-bde8c6f4-a0a7-4d11-be45-946dae16ace7-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-bde8c6f4-a0a7-4d11-be45-946dae16ace7-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+:ED-a7301123-322b-42de-b06e-8d814968efdb-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+:ED-14068e52-d283-486e-9967-faadd67988d8-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+:ED-2110f159-3c9a-45dd-882b-7fae93ea4e50-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+:ED-a3c82fad-bd46-45f6-bc86-79a7ce158a32-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+:ED-92ade205-25fe-417d-955b-a9790802902b
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-5c1e3609-c67d-48a2-887f-44fdd7877fbb> ;
+      owls:presents :ED-92ade205-25fe-417d-955b-a9790802902b-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-684b9e45-dee9-4582-b6bb-1421e46b13d3
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-1822519d-1f07-4898-8a27-69c323650fa3> ;
+      owls:presents :ED-684b9e45-dee9-4582-b6bb-1421e46b13d3-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-92ade205-25fe-417d-955b-a9790802902b-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+<FoI-fda22fec-0840-4931-9a97-b82d769942bd>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.125743621869944"^^xsd:double ;
+      ct:hasEndLongitude "10.15788067857352"^^xsd:double ;
+      ct:hasStartLatitude "56.118198830180894"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.148353690807198"^^xsd:double .
+
+:ED-a7301123-322b-42de-b06e-8d814968efdb
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-1f058aa2-da5e-424b-90a5-436839b065f3> ;
+      owls:presents :ED-a7301123-322b-42de-b06e-8d814968efdb-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-684b9e45-dee9-4582-b6bb-1421e46b13d3-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+<FoI-7adcffa8-993a-47f5-b87d-f3124ff2b98d>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.118198830180894"^^xsd:double ;
+      ct:hasEndLongitude "10.148353690807198"^^xsd:double ;
+      ct:hasStartLatitude "56.1102508220387"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.153714822090137"^^xsd:double .
+
+<FoI-814d8a71-0596-4d3e-a416-edda90ca4b0e>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.148242094184255"^^xsd:double ;
+      ct:hasEndLongitude "10.149874309192683"^^xsd:double ;
+      ct:hasStartLatitude "56.14051551675728"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.154338145998054"^^xsd:double .
+
+<Property-1822519d-1f07-4898-8a27-69c323650fa3>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-814d8a71-0596-4d3e-a416-edda90ca4b0e> .
+
+<Property-fd8ed774-d45d-473c-9b5c-f2129b003551>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-3327d5e3-2cd2-4b5f-b6a0-328b93387534> .
+
+<Property-7ee82701-b989-4983-bd05-62a5283de028>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-7adcffa8-993a-47f5-b87d-f3124ff2b98d> .
+
+:ED-14068e52-d283-486e-9967-faadd67988d8
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-2ba1f7fe-f541-442c-b751-0a4890e9f582> ;
+      owls:presents :ED-14068e52-d283-486e-9967-faadd67988d8-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-b3050615-c9f3-4d7b-83c2-d94b30f4b095
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-2c2e5b84-4e1f-4b40-a96f-64a0706dfb37> ;
+      owls:presents :ED-b3050615-c9f3-4d7b-83c2-d94b30f4b095-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-feda5472-5362-4055-9ba0-4dc9a8a36fcf
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-5c8438fd-d52d-4012-93b3-82bc394707b0> ;
+      owls:presents :ED-feda5472-5362-4055-9ba0-4dc9a8a36fcf-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+:ED-2110f159-3c9a-45dd-882b-7fae93ea4e50
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes <Property-fd8ed774-d45d-473c-9b5c-f2129b003551> ;
+      owls:presents :ED-2110f159-3c9a-45dd-882b-7fae93ea4e50-Profile ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <>
+              ] .
+
+<Property-2ba1f7fe-f541-442c-b751-0a4890e9f582>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-a9577956-3941-4d9e-bef9-376c9a133c23> .
+
+<FoI-4323341f-15e3-4a48-8aa5-8a1076db15d1>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.181353258286634"^^xsd:double ;
+      ct:hasEndLongitude "10.192906008598356"^^xsd:double ;
+      ct:hasStartLatitude "56.178623267668705"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.18461071717934"^^xsd:double .
+
+:ED-b3050615-c9f3-4d7b-83c2-d94b30f4b095-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+<FoI-60695e59-13e5-41b3-9446-4183d7bbd9be>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.174917180024806"^^xsd:double ;
+      ct:hasEndLongitude "10.171611868717264"^^xsd:double ;
+      ct:hasStartLatitude "56.17304495205962"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.161823402446771"^^xsd:double .
+
+<FoI-026ff6c1-1e5f-482c-ab10-3d3715a1fb12>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.14051551675728"^^xsd:double ;
+      ct:hasEndLongitude "10.154338145998054"^^xsd:double ;
+      ct:hasStartLatitude "56.13203209461566"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.157658842922274"^^xsd:double .
+
+<FoI-3327d5e3-2cd2-4b5f-b6a0-328b93387534>
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.178623267668705"^^xsd:double ;
+      ct:hasEndLongitude "10.18461071717934"^^xsd:double ;
+      ct:hasStartLatitude "56.174917180024806"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.171611868717264"^^xsd:double .
+
+:ED-feda5472-5362-4055-9ba0-4dc9a8a36fcf-Profile
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] .
+
+<Property-87d6ee46-d4f6-4d01-87ae-686acd9935c6>
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf <FoI-026ff6c1-1e5f-482c-ab10-3d3715a1fb12> .

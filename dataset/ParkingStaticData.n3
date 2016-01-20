@@ -1,0 +1,608 @@
+@prefix DUL: <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix ces: <http://www.insight-centre.org/ces#> .
+@prefix ct: <http://ict-citypulse.eu/city#> .
+@prefix daml: <http://www.daml.org/2001/03/daml+oil#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix muo: <http://purl.oclc.org/NET/muo/muo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix owlsg: <http://www.daml.org/services/owl-s/1.2/Grounding.owl#> .
+@prefix owlss: <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix owlssc: <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix owlssp: <http://www.daml.org/services/owl-s/1.2/Profile.owl#> .
+@prefix owlssrp: <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qoi: <http://purl.oclc.org/NET/UASO/qoi#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sao: <http://purl.oclc.org/NET/UNIS/sao/sao#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix tzont: <http://www.w3.org/2006/timezone#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ict-citypulse.eu/Observation-0490b891-e386-4615-ad3c-e1fe8411ce30> a sao:Point ;
+    sao:value "512" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-453e11d2-9cac-4b1b-a95c-29598b13d8af> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property6e2bf40e-9efb-4f79-aae5-2e57527bd2ff> .
+
+<http://ict-citypulse.eu/Observation-0d5751b0-7611-4b71-9c6b-d28eb0692208> a sao:Point ;
+    sao:value "65" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> ;
+    ssn:observedProperty <http://ict-citypulse.eu/propertybedbf169-53fd-44ab-bbb1-7c49ddd78eb3> .
+
+<http://ict-citypulse.eu/Observation-0d8c0740-f434-4349-a345-51d4535c7bee> a sao:Point ;
+    sao:value "449" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-00caf0a5-0a81-4284-a39a-e9732bdebe77> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property49b31527-dad4-4889-9669-f36f386412ed> .
+
+<http://ict-citypulse.eu/Observation-1022bf7a-6c26-47db-a427-71ce49252548> a sao:Point ;
+    sao:value "1000" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-2fbe76d1-78ad-4e95-8678-a135bb326092> ;
+    ssn:observedProperty <http://ict-citypulse.eu/propertyaada136f-0dc6-43fa-8b96-2566887b5b5c> .
+
+<http://ict-citypulse.eu/Observation-3ef9d171-a35d-45cb-bff4-4f3f23b51416> a sao:Point ;
+    sao:value "210" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-eea5d4db-36bd-47e6-b10b-0a4ff442df26> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property47221127-a595-4c31-ae81-05e44a6bd241> .
+
+<http://ict-citypulse.eu/Observation-57de5697-6cec-4f6d-8bd0-83448f362da9> a sao:Point ;
+    sao:value "654" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-b754e714-c71b-4f8b-aa2e-109f66fe42ea> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property5942c5f6-83ed-4b3c-bf05-32c8947365d3> .
+
+<http://ict-citypulse.eu/Observation-9743bf7d-c0d0-443c-8ca2-2e5390f57fd6> a sao:Point ;
+    sao:value "319" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-fc9fce9e-751c-4cf9-b680-eb074ad049ec> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property0db967c7-2d8a-4863-8f29-2981fe84b5bf> .
+
+<http://ict-citypulse.eu/Observation-bfb7f0c2-9e38-407a-b234-03596bea09e4> a sao:Point ;
+    sao:value "1240" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-ee21d76f-6bae-41e3-9c75-ac639eb69fed> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property01e3f850-270f-4ad1-9943-832aead65ef7> .
+
+<http://ict-citypulse.eu/Observation-c7ea6b62-b51b-48d5-9de3-e09d4a8e7fb0> a sao:Point ;
+    sao:value "953" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-50b70585-cba4-4ad5-9d99-1c2b83b70f01> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property839c5fa4-9864-469c-a23d-d07b81e08533> .
+
+<http://ict-citypulse.eu/Observation-c8dc7ac5-d219-456a-bf81-0f1a938dc7cd> a sao:Point ;
+    sao:value "700" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-a6b8c108-396f-482a-b605-ef4a00072367> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property67624382-00bf-4b96-aa96-d3a5f2b87596> .
+
+<http://ict-citypulse.eu/Observation-dd55913c-78fa-4163-be9a-d723d5f2fe2e> a sao:Point ;
+    sao:value "383" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-1448f23e-d66a-4842-a76c-38856f292b58> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property0be78fd5-a736-4a71-aa3c-b17bab5d5763> .
+
+<http://ict-citypulse.eu/Observation-e5473402-dadd-4a1e-90fc-6ada28a72aa1> a sao:Point ;
+    sao:value "142" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> ;
+    ssn:observedProperty <http://ict-citypulse.eu/property56427541-b966-4b3d-9587-afae18e053c2> .
+
+<http://ict-citypulse.eu/Observation-f2920650-2aa6-4f89-8143-1f091aff671a> a sao:Point ;
+    sao:value "105" ;
+    ssn:observedBy <http://ict-citypulse.eu/SensorID-2f8107cd-7f1a-4516-ace7-553c89fa3af7> ;
+    ssn:observedProperty <http://ict-citypulse.eu/propertye29c0c1f-41d2-44c0-8fef-4682e1323c29> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-00caf0a5-0a81-4284-a39a-e9732bdebe77> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-00caf0a5-0a81-4284-a39a-e9732bdebe77> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-00caf0a5-0a81-4284-a39a-e9732bdebe77>,
+        <http://ict-citypulse.eu/MessageBusGrounding-00caf0a5-0a81-4284-a39a-e9732bdebe77> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-00caf0a5-0a81-4284-a39a-e9732bdebe77> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-1448f23e-d66a-4842-a76c-38856f292b58> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-1448f23e-d66a-4842-a76c-38856f292b58> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-1448f23e-d66a-4842-a76c-38856f292b58>,
+        <http://ict-citypulse.eu/MessageBusGrounding-1448f23e-d66a-4842-a76c-38856f292b58> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-1448f23e-d66a-4842-a76c-38856f292b58> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-2f8107cd-7f1a-4516-ace7-553c89fa3af7> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-2f8107cd-7f1a-4516-ace7-553c89fa3af7> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-2f8107cd-7f1a-4516-ace7-553c89fa3af7>,
+        <http://ict-citypulse.eu/MessageBusGrounding-2f8107cd-7f1a-4516-ace7-553c89fa3af7> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-2f8107cd-7f1a-4516-ace7-553c89fa3af7> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-2fbe76d1-78ad-4e95-8678-a135bb326092> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-2fbe76d1-78ad-4e95-8678-a135bb326092> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-2fbe76d1-78ad-4e95-8678-a135bb326092>,
+        <http://ict-citypulse.eu/MessageBusGrounding-2fbe76d1-78ad-4e95-8678-a135bb326092> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-2fbe76d1-78ad-4e95-8678-a135bb326092> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-453e11d2-9cac-4b1b-a95c-29598b13d8af> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-453e11d2-9cac-4b1b-a95c-29598b13d8af> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-453e11d2-9cac-4b1b-a95c-29598b13d8af>,
+        <http://ict-citypulse.eu/MessageBusGrounding-453e11d2-9cac-4b1b-a95c-29598b13d8af> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-453e11d2-9cac-4b1b-a95c-29598b13d8af> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-50b70585-cba4-4ad5-9d99-1c2b83b70f01> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-50b70585-cba4-4ad5-9d99-1c2b83b70f01> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-50b70585-cba4-4ad5-9d99-1c2b83b70f01>,
+        <http://ict-citypulse.eu/MessageBusGrounding-50b70585-cba4-4ad5-9d99-1c2b83b70f01> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-50b70585-cba4-4ad5-9d99-1c2b83b70f01> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-a6b8c108-396f-482a-b605-ef4a00072367> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-a6b8c108-396f-482a-b605-ef4a00072367> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-a6b8c108-396f-482a-b605-ef4a00072367>,
+        <http://ict-citypulse.eu/MessageBusGrounding-a6b8c108-396f-482a-b605-ef4a00072367> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-a6b8c108-396f-482a-b605-ef4a00072367> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-b754e714-c71b-4f8b-aa2e-109f66fe42ea> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-b754e714-c71b-4f8b-aa2e-109f66fe42ea> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-b754e714-c71b-4f8b-aa2e-109f66fe42ea>,
+        <http://ict-citypulse.eu/MessageBusGrounding-b754e714-c71b-4f8b-aa2e-109f66fe42ea> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-b754e714-c71b-4f8b-aa2e-109f66fe42ea> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f>,
+        <http://ict-citypulse.eu/MessageBusGrounding-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-ee21d76f-6bae-41e3-9c75-ac639eb69fed> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-ee21d76f-6bae-41e3-9c75-ac639eb69fed> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-ee21d76f-6bae-41e3-9c75-ac639eb69fed>,
+        <http://ict-citypulse.eu/MessageBusGrounding-ee21d76f-6bae-41e3-9c75-ac639eb69fed> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-ee21d76f-6bae-41e3-9c75-ac639eb69fed> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-eea5d4db-36bd-47e6-b10b-0a4ff442df26> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-eea5d4db-36bd-47e6-b10b-0a4ff442df26> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-eea5d4db-36bd-47e6-b10b-0a4ff442df26>,
+        <http://ict-citypulse.eu/MessageBusGrounding-eea5d4db-36bd-47e6-b10b-0a4ff442df26> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-eea5d4db-36bd-47e6-b10b-0a4ff442df26> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-f1f5af67-f570-4eb7-a18e-8936bd5d2e54>,
+        <http://ict-citypulse.eu/MessageBusGrounding-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> .
+
+<http://ict-citypulse.eu/PrimitiveEventService-fc9fce9e-751c-4cf9-b680-eb074ad049ec> a ces:PrimitiveEventService ;
+    owlss:presents <http://ict-citypulse.eu/EventProfile-fc9fce9e-751c-4cf9-b680-eb074ad049ec> ;
+    owlss:supports <http://ict-citypulse.eu/HttpGrounding-fc9fce9e-751c-4cf9-b680-eb074ad049ec>,
+        <http://ict-citypulse.eu/MessageBusGrounding-fc9fce9e-751c-4cf9-b680-eb074ad049ec> ;
+    ces:hasPhysicalEventSource <http://ict-citypulse.eu/SensorID-fc9fce9e-751c-4cf9-b680-eb074ad049ec> .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-BRUUNS> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-BUSGADEHUSET> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-DOKK1> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-KALKVAERKSVEJ> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-MAGASIN> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-NORREPORT> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-Navitas> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-NewBusgadehuset> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-SALLING> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-SCANDCENTER> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-SKOLEBAKKEN> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-Urban_Level_1> a prov:Entity .
+
+<http://ict-citypulse.eu/AarhusParking-GarageCode-Urban_Level_2+3> a prov:Entity .
+
+<http://ict-citypulse.eu/EventProfile-00caf0a5-0a81-4284-a39a-e9732bdebe77> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-1448f23e-d66a-4842-a76c-38856f292b58> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-2f8107cd-7f1a-4516-ace7-553c89fa3af7> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-2fbe76d1-78ad-4e95-8678-a135bb326092> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-453e11d2-9cac-4b1b-a95c-29598b13d8af> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-50b70585-cba4-4ad5-9d99-1c2b83b70f01> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-a6b8c108-396f-482a-b605-ef4a00072367> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-b754e714-c71b-4f8b-aa2e-109f66fe42ea> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-ee21d76f-6bae-41e3-9c75-ac639eb69fed> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-eea5d4db-36bd-47e6-b10b-0a4ff442df26> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/EventProfile-fc9fce9e-751c-4cf9-b680-eb074ad049ec> a ces:EventProfile ;
+    owlssc:serviceCategory <http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> .
+
+<http://ict-citypulse.eu/HttpGrounding-00caf0a5-0a81-4284-a39a-e9732bdebe77> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/00caf0a5-0a81-4284-a39a-e9732bdebe77" .
+
+<http://ict-citypulse.eu/HttpGrounding-1448f23e-d66a-4842-a76c-38856f292b58> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/1448f23e-d66a-4842-a76c-38856f292b58" .
+
+<http://ict-citypulse.eu/HttpGrounding-2f8107cd-7f1a-4516-ace7-553c89fa3af7> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/2f8107cd-7f1a-4516-ace7-553c89fa3af7" .
+
+<http://ict-citypulse.eu/HttpGrounding-2fbe76d1-78ad-4e95-8678-a135bb326092> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/2fbe76d1-78ad-4e95-8678-a135bb326092" .
+
+<http://ict-citypulse.eu/HttpGrounding-453e11d2-9cac-4b1b-a95c-29598b13d8af> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/453e11d2-9cac-4b1b-a95c-29598b13d8af" .
+
+<http://ict-citypulse.eu/HttpGrounding-50b70585-cba4-4ad5-9d99-1c2b83b70f01> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/50b70585-cba4-4ad5-9d99-1c2b83b70f01" .
+
+<http://ict-citypulse.eu/HttpGrounding-a6b8c108-396f-482a-b605-ef4a00072367> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/a6b8c108-396f-482a-b605-ef4a00072367" .
+
+<http://ict-citypulse.eu/HttpGrounding-b754e714-c71b-4f8b-aa2e-109f66fe42ea> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/b754e714-c71b-4f8b-aa2e-109f66fe42ea" .
+
+<http://ict-citypulse.eu/HttpGrounding-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f" .
+
+<http://ict-citypulse.eu/HttpGrounding-ee21d76f-6bae-41e3-9c75-ac639eb69fed> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/ee21d76f-6bae-41e3-9c75-ac639eb69fed" .
+
+<http://ict-citypulse.eu/HttpGrounding-eea5d4db-36bd-47e6-b10b-0a4ff442df26> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/eea5d4db-36bd-47e6-b10b-0a4ff442df26" .
+
+<http://ict-citypulse.eu/HttpGrounding-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/f1f5af67-f570-4eb7-a18e-8936bd5d2e54" .
+
+<http://ict-citypulse.eu/HttpGrounding-fc9fce9e-751c-4cf9-b680-eb074ad049ec> a ces:HttpGrounding ;
+    ces:httpService "http://140.203.155.76:8010/traffic/annotated/fc9fce9e-751c-4cf9-b680-eb074ad049ec" .
+
+<http://ict-citypulse.eu/Location-00caf0a5-0a81-4284-a39a-e9732bdebe77> a geo:SpatialThing ;
+    geo:lat "56.159469" ;
+    geo:long "10.2162612" .
+
+<http://ict-citypulse.eu/Location-1448f23e-d66a-4842-a76c-38856f292b58> a geo:SpatialThing ;
+    geo:lat "56.15679" ;
+    geo:long "10.2049" .
+
+<http://ict-citypulse.eu/Location-2f8107cd-7f1a-4516-ace7-553c89fa3af7> a geo:SpatialThing ;
+    geo:lat "56.15561" ;
+    geo:long "10.206" .
+
+<http://ict-citypulse.eu/Location-2fbe76d1-78ad-4e95-8678-a135bb326092> a geo:SpatialThing ;
+    geo:lat "56.1532627" ;
+    geo:long "10.2138581" .
+
+<http://ict-citypulse.eu/Location-453e11d2-9cac-4b1b-a95c-29598b13d8af> a geo:SpatialThing ;
+    geo:lat "56.15659" ;
+    geo:long "10.21353" .
+
+<http://ict-citypulse.eu/Location-50b70585-cba4-4ad5-9d99-1c2b83b70f01> a geo:SpatialThing ;
+    geo:lat "56.14951" ;
+    geo:long "10.20596" .
+
+<http://ict-citypulse.eu/Location-a6b8c108-396f-482a-b605-ef4a00072367> a geo:SpatialThing ;
+    geo:lat "56.15441" ;
+    geo:long "10.20818" .
+
+<http://ict-citypulse.eu/Location-b754e714-c71b-4f8b-aa2e-109f66fe42ea> a geo:SpatialThing ;
+    geo:lat "56.15" ;
+    geo:long "10.216667" .
+
+<http://ict-citypulse.eu/Location-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> a geo:SpatialThing ;
+    geo:lat "56.15561" ;
+    geo:long "10.206" .
+
+<http://ict-citypulse.eu/Location-ee21d76f-6bae-41e3-9c75-ac639eb69fed> a geo:SpatialThing ;
+    geo:lat "56.1527" ;
+    geo:long "10.197" .
+
+<http://ict-citypulse.eu/Location-eea5d4db-36bd-47e6-b10b-0a4ff442df26> a geo:SpatialThing ;
+    geo:lat "56.14952" ;
+    geo:long "10.21149" .
+
+<http://ict-citypulse.eu/Location-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> a geo:SpatialThing ;
+    geo:lat "56.16184" ;
+    geo:long "10.21284" .
+
+<http://ict-citypulse.eu/Location-fc9fce9e-751c-4cf9-b680-eb074ad049ec> a geo:SpatialThing ;
+    geo:lat "56.15" ;
+    geo:long "10.216667" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-00caf0a5-0a81-4284-a39a-e9732bdebe77> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-00caf0a5-0a81-4284-a39a-e9732bdebe77" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-1448f23e-d66a-4842-a76c-38856f292b58> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-1448f23e-d66a-4842-a76c-38856f292b58" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-2f8107cd-7f1a-4516-ace7-553c89fa3af7> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-2f8107cd-7f1a-4516-ace7-553c89fa3af7" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-2fbe76d1-78ad-4e95-8678-a135bb326092> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-2fbe76d1-78ad-4e95-8678-a135bb326092" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-453e11d2-9cac-4b1b-a95c-29598b13d8af> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-453e11d2-9cac-4b1b-a95c-29598b13d8af" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-50b70585-cba4-4ad5-9d99-1c2b83b70f01> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-50b70585-cba4-4ad5-9d99-1c2b83b70f01" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-a6b8c108-396f-482a-b605-ef4a00072367> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-a6b8c108-396f-482a-b605-ef4a00072367" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-b754e714-c71b-4f8b-aa2e-109f66fe42ea> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-b754e714-c71b-4f8b-aa2e-109f66fe42ea" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-ee21d76f-6bae-41e3-9c75-ac639eb69fed> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-ee21d76f-6bae-41e3-9c75-ac639eb69fed" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-eea5d4db-36bd-47e6-b10b-0a4ff442df26> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-eea5d4db-36bd-47e6-b10b-0a4ff442df26" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-f1f5af67-f570-4eb7-a18e-8936bd5d2e54" .
+
+<http://ict-citypulse.eu/MessageBusGrounding-fc9fce9e-751c-4cf9-b680-eb074ad049ec> a ces:MessageBusGrounding ;
+    ces:hasExchangeName "Aarhus_Parking" ;
+    ces:hasServerAddress "amqp://guest:guest@140.203.155.76:8009" ;
+    ces:hasTopic "http://ict-citypulse.eu/SensorID-fc9fce9e-751c-4cf9-b680-eb074ad049ec" .
+
+<http://ict-citypulse.eu/property1449d1a6-5424-4029-ac5b-c49a453a3e40> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/a3d139b4-7127-48a2-9111-54816f8fff03> .
+
+<http://ict-citypulse.eu/property2ba68566-f8d1-4869-b8f8-f71cf0377d5d> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/04a3ae77-506d-4879-ba1f-3a1d95f9be28> .
+
+<http://ict-citypulse.eu/property357768a9-0e44-4851-b445-e06a2aea17b9> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/4fccd039-762e-4706-bc2b-c5d7e4ce1c03> .
+
+<http://ict-citypulse.eu/property5be1c807-6ccf-45ce-811f-7fb1f80cb064> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/6b87bf61-27e7-4a40-8863-7f47b5900f58> .
+
+<http://ict-citypulse.eu/property63a19017-fece-4d49-a16f-eec144030d74> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/55be1ea8-c465-4867-86ef-0fecd1604dff> .
+
+<http://ict-citypulse.eu/property6530132e-fde8-4a47-b64a-ae197cb67c56> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/3b44a270-e713-4935-b691-6f2605943634> .
+
+<http://ict-citypulse.eu/property758a2eea-0ad8-4994-a1cc-e7eb98b4805a> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/77664eff-9a3b-4a91-a892-ae959cf16192> .
+
+<http://ict-citypulse.eu/property7611f74a-c6d8-4110-bcf5-09aa9ee729b9> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/95605374-b2f1-4442-a690-7dfce1fc9f45> .
+
+<http://ict-citypulse.eu/propertyb4aff824-1265-4a36-aa33-60518d0cb90e> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/7b603441-b802-4f27-9680-39dbe2844f45> .
+
+<http://ict-citypulse.eu/propertyc0a8cb7d-65e1-49bb-bf3b-37490b7c2dba> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/bcfb26ea-2220-4ebf-b353-32be66cb6198> .
+
+<http://ict-citypulse.eu/propertyc7761ed2-a8df-4ae6-b58c-273398bf15f1> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/89a0493b-a472-401a-83f3-4c413c29f38f> .
+
+<http://ict-citypulse.eu/propertyca7c1c10-6cfc-41c1-ac0e-e87eb19028c3> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/cf09c7a5-a4c6-4a74-aa24-cd3779d6c45d> .
+
+<http://ict-citypulse.eu/propertye6abe430-081c-42f1-965d-c6430c2c9277> a ct:ParkingVacancy ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/88c999f4-ce16-4ea4-aa1e-feffe96fed64> .
+
+<http://ict-citypulse.eu/04a3ae77-506d-4879-ba1f-3a1d95f9be28> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> .
+
+<http://ict-citypulse.eu/3b44a270-e713-4935-b691-6f2605943634> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-453e11d2-9cac-4b1b-a95c-29598b13d8af> .
+
+<http://ict-citypulse.eu/4fccd039-762e-4706-bc2b-c5d7e4ce1c03> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-fc9fce9e-751c-4cf9-b680-eb074ad049ec> .
+
+<http://ict-citypulse.eu/55be1ea8-c465-4867-86ef-0fecd1604dff> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-00caf0a5-0a81-4284-a39a-e9732bdebe77> .
+
+<http://ict-citypulse.eu/6b87bf61-27e7-4a40-8863-7f47b5900f58> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-2f8107cd-7f1a-4516-ace7-553c89fa3af7> .
+
+<http://ict-citypulse.eu/77664eff-9a3b-4a91-a892-ae959cf16192> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-50b70585-cba4-4ad5-9d99-1c2b83b70f01> .
+
+<http://ict-citypulse.eu/7b603441-b802-4f27-9680-39dbe2844f45> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-ee21d76f-6bae-41e3-9c75-ac639eb69fed> .
+
+<http://ict-citypulse.eu/88c999f4-ce16-4ea4-aa1e-feffe96fed64> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-1448f23e-d66a-4842-a76c-38856f292b58> .
+
+<http://ict-citypulse.eu/89a0493b-a472-401a-83f3-4c413c29f38f> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-eea5d4db-36bd-47e6-b10b-0a4ff442df26> .
+
+<http://ict-citypulse.eu/95605374-b2f1-4442-a690-7dfce1fc9f45> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-2fbe76d1-78ad-4e95-8678-a135bb326092> .
+
+<http://ict-citypulse.eu/SensorID-00caf0a5-0a81-4284-a39a-e9732bdebe77> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property49b31527-dad4-4889-9669-f36f386412ed>,
+        <http://ict-citypulse.eu/property63a19017-fece-4d49-a16f-eec144030d74> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-Navitas>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-1448f23e-d66a-4842-a76c-38856f292b58> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property0be78fd5-a736-4a71-aa3c-b17bab5d5763>,
+        <http://ict-citypulse.eu/propertye6abe430-081c-42f1-965d-c6430c2c9277> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-MAGASIN>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-2f8107cd-7f1a-4516-ace7-553c89fa3af7> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property5be1c807-6ccf-45ce-811f-7fb1f80cb064>,
+        <http://ict-citypulse.eu/propertye29c0c1f-41d2-44c0-8fef-4682e1323c29> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-NewBusgadehuset>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-2fbe76d1-78ad-4e95-8678-a135bb326092> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property7611f74a-c6d8-4110-bcf5-09aa9ee729b9>,
+        <http://ict-citypulse.eu/propertyaada136f-0dc6-43fa-8b96-2566887b5b5c> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-DOKK1>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-453e11d2-9cac-4b1b-a95c-29598b13d8af> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property6530132e-fde8-4a47-b64a-ae197cb67c56>,
+        <http://ict-citypulse.eu/property6e2bf40e-9efb-4f79-aae5-2e57527bd2ff> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-SKOLEBAKKEN>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-50b70585-cba4-4ad5-9d99-1c2b83b70f01> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property758a2eea-0ad8-4994-a1cc-e7eb98b4805a>,
+        <http://ict-citypulse.eu/property839c5fa4-9864-469c-a23d-d07b81e08533> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-BRUUNS>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-a6b8c108-396f-482a-b605-ef4a00072367> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property67624382-00bf-4b96-aa96-d3a5f2b87596>,
+        <http://ict-citypulse.eu/propertyc0a8cb7d-65e1-49bb-bf3b-37490b7c2dba> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-SALLING>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-b754e714-c71b-4f8b-aa2e-109f66fe42ea> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property5942c5f6-83ed-4b3c-bf05-32c8947365d3>,
+        <http://ict-citypulse.eu/propertyca7c1c10-6cfc-41c1-ac0e-e87eb19028c3> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-Urban_Level_2+3>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-e3127ea1-1e97-4c9d-8e78-de63fa7bbe5f> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property2ba68566-f8d1-4869-b8f8-f71cf0377d5d>,
+        <http://ict-citypulse.eu/property56427541-b966-4b3d-9587-afae18e053c2> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-BUSGADEHUSET>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-ee21d76f-6bae-41e3-9c75-ac639eb69fed> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property01e3f850-270f-4ad1-9943-832aead65ef7>,
+        <http://ict-citypulse.eu/propertyb4aff824-1265-4a36-aa33-60518d0cb90e> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-SCANDCENTER>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-eea5d4db-36bd-47e6-b10b-0a4ff442df26> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property47221127-a595-4c31-ae81-05e44a6bd241>,
+        <http://ict-citypulse.eu/propertyc7761ed2-a8df-4ae6-b58c-273398bf15f1> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-KALKVAERKSVEJ>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property1449d1a6-5424-4029-ac5b-c49a453a3e40>,
+        <http://ict-citypulse.eu/propertybedbf169-53fd-44ab-bbb1-7c49ddd78eb3> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-NORREPORT>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/SensorID-fc9fce9e-751c-4cf9-b680-eb074ad049ec> a ssn:Sensor ;
+    ssn:observes <http://ict-citypulse.eu/property0db967c7-2d8a-4863-8f29-2981fe84b5bf>,
+        <http://ict-citypulse.eu/property357768a9-0e44-4851-b445-e06a2aea17b9> ;
+    prov:hadPrimarySource <http://ict-citypulse.eu/AarhusParking-GarageCode-Urban_Level_1>,
+        <pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> ;
+    prov:wasAttributedTo <http://ict-citypulse.eu/cityofaarhus> .
+
+<http://ict-citypulse.eu/a3d139b4-7127-48a2-9111-54816f8fff03> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-f1f5af67-f570-4eb7-a18e-8936bd5d2e54> .
+
+<http://ict-citypulse.eu/bcfb26ea-2220-4ebf-b353-32be66cb6198> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-a6b8c108-396f-482a-b605-ef4a00072367> .
+
+<http://ict-citypulse.eu/cf09c7a5-a4c6-4a74-aa24-cd3779d6c45d> a ssn:FeatureOfInterest ;
+    ssn:hasLocation <http://ict-citypulse.eu/Location-b754e714-c71b-4f8b-aa2e-109f66fe42ea> .
+
+<http://ict-citypulse.eu/property01e3f850-270f-4ad1-9943-832aead65ef7> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/7b603441-b802-4f27-9680-39dbe2844f45> .
+
+<http://ict-citypulse.eu/property0be78fd5-a736-4a71-aa3c-b17bab5d5763> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/88c999f4-ce16-4ea4-aa1e-feffe96fed64> .
+
+<http://ict-citypulse.eu/property0db967c7-2d8a-4863-8f29-2981fe84b5bf> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/4fccd039-762e-4706-bc2b-c5d7e4ce1c03> .
+
+<http://ict-citypulse.eu/property47221127-a595-4c31-ae81-05e44a6bd241> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/89a0493b-a472-401a-83f3-4c413c29f38f> .
+
+<http://ict-citypulse.eu/property49b31527-dad4-4889-9669-f36f386412ed> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/55be1ea8-c465-4867-86ef-0fecd1604dff> .
+
+<http://ict-citypulse.eu/property56427541-b966-4b3d-9587-afae18e053c2> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/04a3ae77-506d-4879-ba1f-3a1d95f9be28> .
+
+<http://ict-citypulse.eu/property5942c5f6-83ed-4b3c-bf05-32c8947365d3> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/cf09c7a5-a4c6-4a74-aa24-cd3779d6c45d> .
+
+<http://ict-citypulse.eu/property67624382-00bf-4b96-aa96-d3a5f2b87596> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/bcfb26ea-2220-4ebf-b353-32be66cb6198> .
+
+<http://ict-citypulse.eu/property6e2bf40e-9efb-4f79-aae5-2e57527bd2ff> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/3b44a270-e713-4935-b691-6f2605943634> .
+
+<http://ict-citypulse.eu/property839c5fa4-9864-469c-a23d-d07b81e08533> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/77664eff-9a3b-4a91-a892-ae959cf16192> .
+
+<http://ict-citypulse.eu/propertyaada136f-0dc6-43fa-8b96-2566887b5b5c> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/95605374-b2f1-4442-a690-7dfce1fc9f45> .
+
+<http://ict-citypulse.eu/propertybedbf169-53fd-44ab-bbb1-7c49ddd78eb3> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/a3d139b4-7127-48a2-9111-54816f8fff03> .
+
+<http://ict-citypulse.eu/propertye29c0c1f-41d2-44c0-8fef-4682e1323c29> a ct:VehicleCount ;
+    ssn:isPropertyOf <http://ict-citypulse.eu/6b87bf61-27e7-4a40-8863-7f47b5900f58> .
+
+<http://ict-citypulse.eu/ServiceCategory-ab36cdd7-d4c0-4bc8-ba2b-ad367b86733b> a owlssc:ServiceCategory ;
+    owlssc:serviceCategoryName "Aarhus_Parking" .
+
+<http://ict-citypulse.eu/cityofaarhus> a prov:Agent .
+
+<pgsaar.dyndns.org:4000/consumer/webServices/getGarageData.aspx> a prov:Entity .
+

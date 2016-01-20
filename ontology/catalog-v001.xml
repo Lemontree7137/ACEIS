@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.oclc.org/NET/UASO/qoi#" uri="QualityOntologyRestrictions.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://purl.oclc.org/NET/UASO/qoi#" uri="QualityOntology.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://purl.oclc.org/NET/ssnx/ssn" uri="ssn.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.daml.org/services/owl-s/1.2/Grounding.owl" uri="Grounding.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.daml.org/services/owl-s/1.2/Process.owl" uri="Process.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.daml.org/services/owl-s/1.2/Profile.owl" uri="Profile.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.daml.org/services/owl-s/1.2/Service.owl" uri="Service.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl" uri="ServiceCategory.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl" uri="ServiceParameter.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.insight-centre.org/ces" uri="ces.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1430915873260" name="http://www.semanticweb.org/owl/owlapi/turtle" uri="QualityOntology.rdf"/>
+    </group>
+</catalog>
