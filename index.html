@@ -41,9 +41,20 @@
 <p>ACEIS has the following limitations:</p>
 
 <ul>
-<li> <strong>Event Semantics</strong>: The expressiveness of event requests with regard to temporal and logical correlations is limited to AND, OR, SEQUENCE and REPETITIONS, as described in [citypulse d3.2], and the events modeled in ACEIS are instant events, i.e., only one timestamp allowed for each event. Interval-based events are not supported. </li>
+<li> <strong>Event Semantics</strong>: The expressiveness of event requests with regard to temporal and logical correlations is limited to AND, OR, SEQUENCE and REPETITIONS, as described in <a href="http://www.google.ie/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=0ahUKEwjg_cOR5MzKAhWH7A4KHV7lCmIQFgg0MAM&amp;url=http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D2611287&amp;usg=AFQjCNHdevrB751PI6vvGQ0oFHm_yrQoNA&amp;sig2=hQLOxTLdA15rq-DDK1uVYA">this paper</a>, and the events modeled in ACEIS are instant events, i.e., only one timestamp allowed for each event. Interval-based events are not supported. </li>
 <li> <strong>RSP Engine Types</strong>:  Currently only CQELS and C-SPARQL engines are supported for event service execution. However, a third-party developer can integrate new engines by extending the query transformation module.</li>
 <li> <strong>Concurrent Queries</strong>: Existing RSP engines are still in their early stages and there is room for performance optimization. Currently, the data federation component can handle approximately 1000 CQELS or 90 C-SPARQL queries in parallel, by applying a load-balancing technique. A larger number of concurrent queries may (depending on the query complexity) result in unstable engine status.</li>
+</ul>
+
+<h3>
+<a id="possible-extensions" class="anchor" href="#possible-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Possible Extensions</h3>
+
+<p>ACEIS can be extended to:</p>
+
+<ul>
+<li>support more expressive event semantics by extending the event models, event reusability definitions and the event service composition algorithms,</li>
+<li>support more RSP engines by extending the query transformation algorithms and </li>
+<li>employ more advanced adaptation algorithms.</li>
 </ul>
 
 <h3>
@@ -54,7 +65,8 @@
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p>ACEIS is developed by Feng Gao (<a href="https://github.com/fenggao86" class="user-mention">@fenggao86</a>) at 2015.</p>
+<p>ACEIS is developed by Feng Gao (<a href="https://github.com/fenggao86" class="user-mention">@fenggao86</a>) at 2015.
+Author page and relevant publications can be found <a href="https://www.insight-centre.org/users/feng-gao">here</a></p>
 
 <h3>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
