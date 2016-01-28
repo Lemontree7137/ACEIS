@@ -24,13 +24,16 @@
 
 <p>The Automatic Complex Event Implementation System (ACEIS) is a middleware for complex event services. It is implemented to fulfill large-scale data analysis requirements in the <a href="http://ict-citypulse.eu/">CityPulse</a> project and is responsible for event service discovery, composition, deployment, execution and adaptation. In the CityPulse project, event service discovery and composition refer to finding a data stream or a composite set of data streams to address the user-defined event request. Event service deployment refers to transforming the event service composition results (a.k.a., composition plans) into RDF Stream Processing (RSP) queries and registering these queries to relevant RSP engines, e.g., <a href="https://code.google.com/archive/p/cqels/">CQELS</a> and <a href="http://streamreasoning.org/download">C-SPARQL</a>. Event service execution refers to establishing the input and output connections for the RSP engines to allow them consuming real-time data from lower-level data providers and delivering query results to upper-level data consumers. The figure below illustrates the architecture of ACEIS.</p>
 
+<p><img src="http://fenggao86.github.io/ACEIS/architecture.jpg" alt="Architecture of ACEIS"></p>
+
 <p>It can be used in scenarios where on-demand discovery and composition of data streams are needed, and RSP is used for evaluating queries over the data streams e.g.:</p>
 
 <ul>
 <li>Scenario 1: monitoring traffic conditions over different streets and regions in a city for a city administrator.</li>
-<li>Scenario 2: planning the travel routes for a citizen based on his/her functional and non-functional requirements.
-It cannot be used in situations where queries or streams used for the queries are fixed.</li>
+<li>Scenario 2: planning the travel routes for a citizen based on his/her functional and non-functional requirements.</li>
 </ul>
+
+<p>ACEIS cannot be used in situations where queries or streams used for the queries are fixed.</p>
 
 <h3>
 <a id="known-limitations" class="anchor" href="#known-limitations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known limitations</h3>
