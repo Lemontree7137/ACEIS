@@ -1,0 +1,182 @@
+@prefix :        <http://www.insight-centre.org/dataset/SampleEventRequest#> .
+@prefix prov:    <http://purl.org/NET/provenance.owl#> .
+@prefix tl:      <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix emvo:    <http://sense.deri.ie/vocab/emvo#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix ces:     <http://www.insight-centre.org/ces#> .
+@prefix ct:      <http://ict-citypulse.eu/city#> .
+@prefix owls:    <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix up:      <http://www.ict-citypulse.eu/ontologies/userprofile#> .
+@prefix muo:     <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sao:     <http://purl.oclc.org/NET/UNIS/sao/sao#> .
+@prefix sce1:    <http://ict-citypulse.eu/experiments/Scenario1/> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix osm:     <http://www.insight-centre.org/ontologies/osm#> .
+@prefix qoi:     <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+:DummyService-f56485d2-e3d8-4551-a49c-1f690642162a a ces:EventRequest;
+	owls:presents :DummyService-f56485d2-e3d8-4551-a49c-1f690642162a-Profile;
+	ces:hasConstraint :const1, :const2; ces:hasPreference :pref.
+
+:const1 a ces:Constraint;
+	ces:hasExpression [ emvo:greaterThan "0.0"^^xsd:double];
+	ces:onParameter qoi:Correctness.
+
+:const2 a ces:Constraint;
+	ces:hasExpression [ emvo:lessThan "2000.0"^^xsd:double];
+	ces:onParameter qoi:NetworkConsumption.
+
+:pref a ces:QosWeightPreference;
+	ces:correctnessWeight "1.0"^^xsd:double;
+	ces:networkConsumptionWeight "0.1"^^xsd:double.
+
+
+
+:DummyService-f56485d2-e3d8-4551-a49c-1f690642162a-Profile
+      ces:hasPattern
+              [ a       rdf:Bag , ces:Sequence ;
+                rdf:_1  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-1"^^xsd:string ;
+                          ces:hasService :ED-1
+                        ] ;
+                rdf:_2  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-2"^^xsd:string ;
+                          ces:hasService :ED-2
+                        ] ;
+                rdf:_3  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-3"^^xsd:string ;
+                          ces:hasService :ED-3
+                        ] ;
+                rdf:_4  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-4"^^xsd:string ;
+                          ces:hasService :ED-4
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-1" ;
+                          ces:selectedProperty :Property-1
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-2" ;
+                          ces:selectedProperty :Property-2
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-3" ;
+                          ces:selectedProperty :Property-3
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-4" ;
+                          ces:selectedProperty :Property-4
+                        ]] .
+
+
+
+:ED-1 	a     ces:PrimitiveEventService ;
+      	ssn:observes :Property-1 ;
+      	ces:hasPhysicalEventSource :Sensor-1;
+	owls:presents :ED-1-Profile .
+
+:Sensor-1 a ssn:Sensor; 
+	ssn:observes :Property-1 .
+
+:ED-1-Profile a ces:EventProfile;
+	owlssc:serviceCategory [ a owlssc:ServiceCategory ;
+    				owlssc:serviceCategoryName "Aarhus_Road_Traffic" ].
+
+:ED-2 	a     ces:PrimitiveEventService ;
+      	ssn:observes :Property-2 ;
+      	ces:hasPhysicalEventSource :Sensor-2;
+      	owls:presents :ED-2-Profile .
+
+:Sensor-2 a ssn:Sensor; 
+	ssn:observes :Property-2 .
+
+:ED-2-Profile a ces:EventProfile;
+	owlssc:serviceCategory [ a owlssc:ServiceCategory ;
+    				owlssc:serviceCategoryName "Aarhus_Road_Traffic" ].
+
+:ED-3 	a     ces:PrimitiveEventService ;
+      	ssn:observes :Property-3 ;
+      	ces:hasPhysicalEventSource :Sensor-3;
+      	owls:presents :ED-3-Profile .
+
+:Sensor-3 a ssn:Sensor; 
+	ssn:observes :Property-3 .
+
+:ED-3-Profile a ces:EventProfile;
+	owlssc:serviceCategory [ a owlssc:ServiceCategory ;
+    				owlssc:serviceCategoryName "Aarhus_Road_Traffic" ].
+
+:ED-4 	a     ces:PrimitiveEventService ;
+      	ssn:observes :Property-4 ;
+      	ces:hasPhysicalEventSource :Sensor-4;
+      	owls:presents :ED-4-Profile .
+
+:Sensor-4 a ssn:Sensor; 
+	ssn:observes :Property-4 .
+
+:ED-4-Profile a ces:EventProfile;
+	owlssc:serviceCategory [ a owlssc:ServiceCategory ;
+    				owlssc:serviceCategoryName "Aarhus_Road_Traffic" ].
+
+
+:FoI-1	a ssn:FeatureOfInterest ;
+	sao:beginsAtLocation [	a geo:SpatialThing ;
+    				ct:hasCountryName "Denmark" ;
+    				geo:lat "56.1760387549" ;
+    				geo:long "10.20161666" ] ;
+	sao:endsAtLocation   [	a geo:SpatialThing ;
+				ct:hasCountryName "Lystrup" ;
+				geo:lat "56.1723512066" ;
+				geo:long "10.2092757669" ] .
+
+:FoI-2	a ssn:FeatureOfInterest ;
+	sao:beginsAtLocation [	a geo:SpatialThing ;
+    				ct:hasCountryName "Denmark" ;
+    				geo:lat "56.1992021888" ;
+    				geo:long "10.1822382196" ] ;
+	sao:endsAtLocation   [	a geo:SpatialThing ;
+				ct:hasCountryName "Lystrup" ;
+				geo:lat "56.1895096744" ;
+				geo:long "10.1909402196" ] .
+:FoI-3	a ssn:FeatureOfInterest ;
+	sao:beginsAtLocation [	a geo:SpatialThing ;
+    				ct:hasCountryName "Denmark" ;
+    				geo:lat "56.1967754715" ;
+    				geo:long "10.2162115423" ] ;
+	sao:endsAtLocation   [	a geo:SpatialThing ;
+				ct:hasCountryName "Lystrup" ;
+				geo:lat "56.197651797" ;
+				geo:long "10.2286392159" ] .
+:FoI-4	a ssn:FeatureOfInterest ;
+	sao:beginsAtLocation [	a geo:SpatialThing ;
+    				ct:hasCountryName "Denmark" ;
+    				geo:lat "56.1793224096" ;
+    				geo:long "10.1753382073" ] ;
+	sao:endsAtLocation   [	a geo:SpatialThing ;
+				ct:hasCountryName "Lystrup" ;
+				geo:lat "56.1738916446" ;
+				geo:long "10.1821839595" ] .
+
+
+:Property-1
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-1 .
+:Property-2
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-2 .
+:Property-3
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-3 .
+:Property-4
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-4 .

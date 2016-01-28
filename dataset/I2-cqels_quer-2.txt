@@ -1,0 +1,24 @@
+prefix : <http://www.insight-centre.org/dataset/SampleEventService#> 
+prefix emvo: <http://sense.deri.ie/vocab/emvo#> 
+prefix owlssp: <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> 
+prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> 
+prefix ces: <http://www.insight-centre.org/ces#> 
+prefix owls: <http://www.daml.org/services/owl-s/1.2/Service.owl#> 
+prefix ct: <http://www.insight-centre.org/citytraffic#> 
+prefix muo: <http://purl.oclc.org/NET/muo/ucum/> 
+prefix up: <http://www.ict-citypulse.eu/ontologies/userprofile#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix sao: <http://purl.oclc.org/NET/sao/> 
+prefix q: <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> 
+prefix owlssc: <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix osm: <http://www.insight-centre.org/ontologies/osm#> 
+Select distinct 
+
+?obb314dea422c34dcb9bb3c994be305946 ?service7e6720f5709b4cf4b74632efe4a39ed0 ?property55cbfccbc8484510a130a7d299dfa5d0 ?oba3c7870218064c77a0aca0d1a0459fc3 ?servicebc5e51720b3d4e14b924a318b0966987 ?property21ddb7cbd80b462899c51453f04d4efa ?obf1b75bf45e1a4e278adffa519b0292fd ?servicec26b6ee5bcb446408152c908d1d216ed ?propertyc019212073fe4c869d16510139306fbd ?ob2fbc99cbc34c4a9aa405e852211ccc49 ?servicec91e0d8c3c2c429593baa0d59655373f ?property20d09cf9f8d14158b71096d04b458efc 
+  where { stream <http://www.insight_centre.org/streams/userLoc/> [range 5s]  {?obb314dea422c34dcb9bb3c994be305946 rdf:type ?ob. ?obb314dea422c34dcb9bb3c994be305946 ssn:observedBy ?service7e6720f5709b4cf4b74632efe4a39ed0. ?obb314dea422c34dcb9bb3c994be305946 sao:hasValue ?property55cbfccbc8484510a130a7d299dfa5d0.  } 
+ stream <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'158355'> [range 5s]  {?oba3c7870218064c77a0aca0d1a0459fc3 rdf:type ?ob. ?oba3c7870218064c77a0aca0d1a0459fc3 ssn:observedBy ?servicebc5e51720b3d4e14b924a318b0966987. ?oba3c7870218064c77a0aca0d1a0459fc3 sao:hasValue ?property21ddb7cbd80b462899c51453f04d4efa.  } 
+ stream <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'158386'> [range 5s]  {?obf1b75bf45e1a4e278adffa519b0292fd rdf:type ?ob. ?obf1b75bf45e1a4e278adffa519b0292fd ssn:observedBy ?servicec26b6ee5bcb446408152c908d1d216ed. ?obf1b75bf45e1a4e278adffa519b0292fd sao:hasValue ?propertyc019212073fe4c869d16510139306fbd.  } 
+ stream <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'158415'> [range 5s]  {?ob2fbc99cbc34c4a9aa405e852211ccc49 rdf:type ?ob. ?ob2fbc99cbc34c4a9aa405e852211ccc49 ssn:observedBy ?servicec91e0d8c3c2c429593baa0d59655373f. ?ob2fbc99cbc34c4a9aa405e852211ccc49 sao:hasValue ?property20d09cf9f8d14158b71096d04b458efc.  } 
+ }

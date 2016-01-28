@@ -1,0 +1,30 @@
+prefix : <http://www.insight-centre.org/SampleEventService#> 
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix ces: <http://www.insight-centre.org/ces#> 
+prefix owls:  <http://www.daml.org/services/owl-s/1.2/Service.owl#> 
+prefix owls-g:  <http://www.daml.org/services/owl-s/1.2/Grounding.owl#> 
+prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> 
+prefix geo: <http://www.insight-centre.org/geolocations#> 
+prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> 
+prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> 
+prefix emvo:  <http://sense.deri.ie/vocab/emvo#> 
+prefix muo:   <http://purl.oclc.org/NET/muo/ucum/> 
+prefix ct:    <http://www.insight-centre.org/citytraffic#> 
+prefix sao:  <http://purl.oclc.org/NET/sao/> 
+
+Select distinct ?es1 ?es2 ?es3 ?es4 ?eta1 ?eta2 ?eta3 ?loc ?locId ?seg1Id ?seg2Id ?seg3Id 
+
+Where {
+Stream <http://www.insight_centre.org/streams/userLoc/> [TRIPLES 20] {  ?locId rdf:type ?ob. ?locId ssn:observedBy ?es4. ?locId sao:hasValue ?loc.  }
+Stream <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'158355'> [TRIPLES 200] 
+{  ?seg1Id rdf:type ?ob. ?seg1Id ssn:observedBy ?es1.  ?seg1Id  sao:hasValue ?eta1.}
+Stream <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'158386'> [TRIPLES 20] 
+{  ?seg2Id rdf:type ?ob.  ?seg2Id ssn:observedBy ?es2.  ?seg2Id  sao:hasValue ?eta2.} 
+Stream <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'158415'> [TRIPLES 20] 
+{  ?seg3Id rdf:type ?ob.  ?seg3Id ssn:observedBy ?es3.  ?seg3Id  sao:hasValue ?eta3.} 
+
+}

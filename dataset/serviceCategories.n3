@@ -1,0 +1,43 @@
+@prefix :        <http://www.insight-centre.org/dataset/ServiceCategory#> .
+@prefix ces:     <http://www.insight-centre.org/ces#> .
+@prefix ct:      <http://www.insight-centre.org/citytraffic#> .
+@prefix owls:    <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix muo-velocity: <http://purl.oclc.org/NET/muo/ucum/physical-quality/velocity>.
+
+:SensorService a owlssc:ServiceCategory.
+
+:TrafficReportService rdfs:subClassOf :SensorService;
+	owlssc:serviceCategoryName "Traffic Report"^^xsd:string;
+	ces:observedPropertyType [ a ct:AvgSpeed;
+				   ces:observedPropertyName "Avg. Vehicle Speed"^^xsd:string;
+				   ces:hasUnitName "km/h"^^xsd:string],
+				 [ a ct:VehicleCount;
+				   ces:observedPropertyName "Vehicle Count"^^xsd:string],
+				 [ a ct:EstimatedTime;
+				   ces:observedPropertyName "Estimated Travel Time"^^xsd:string;
+				   ces:hasUnitName "min"^^xsd:string].
+
+:WeatherReportService rdfs:subClassOf :SensorService;
+	owlssc:serviceCategoryName "Weather Report"^^xsd:string;
+	ces:observedPropertyType [ a ct:Humidity;
+				   ces:observedPropertyName "Humidity"^^xsd:string;
+ 				   ces:hasUnitName "%"^^xsd:string],
+				 [ a ct:Temperature;
+				   ces:observedPropertyName "Temperature"^^xsd:string;
+				   ces:hasUnitName "Celsis"^^xsd:string],
+				 [ a ct:WindSpeed;
+				   ces:observedPropertyName "Wind Speed"^^xsd:string;
+				   ces:hasUnitName "m/s"^^xsd:string].
+
+:AirPollutionReportService rdfs:subClassOf :SensorService;
+	owlssc:serviceCategoryName "Air Pollution Report"^^xsd:string;
+	ces:observedPropertyType [ a ct:PM_1;
+				   ces:observedPropertyName "PM 1"^^xsd:string],
+				 [ a ct:PM_2_5;
+				   ces:observedPropertyName "PM 2.5"^^xsd:string],
+				 [ a ct:PM_10;
+				   ces:observedPropertyName "PM 10"^^xsd:string].

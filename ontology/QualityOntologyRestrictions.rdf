@@ -1,0 +1,819 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY qoi "http://purl.oclc.org/NET/UASO/qoi#" >
+    <!ENTITY sao "http://purl.oclc.org/NET/UNIS/sao/sao#" >
+]>
+
+
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:qoi="http://purl.oclc.org/NET/UASO/qoi#"
+     xmlns:sao="http://purl.oclc.org/NET/UNIS/sao/sao#">
+    <owl:Ontology rdf:about="http://purl.oclc.org/NET/UASO/qoi#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->  
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasProvenance -->
+
+    <owl:ObjectProperty rdf:about="&qoi;hasProvenance">
+        <rdfs:label>hasProvenance</rdfs:label>
+        <rdfs:comment>describes the provenance of an entity/data stream</rdfs:comment>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:domain rdf:resource="&sao;StreamData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="&qoi;hasQuality">
+        <rdfs:label>hasQuality</rdfs:label>
+        <rdfs:comment>describes the quality values an entity has</rdfs:comment>
+        <rdfs:range rdf:resource="&qoi;Quality"/>
+        <rdfs:domain rdf:resource="&sao;StreamData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasReputation -->
+
+    <owl:ObjectProperty rdf:about="&qoi;hasReputation">
+        <rdfs:label>hasReputation</rdfs:label>
+        <rdfs:comment>Describes the value range for the Reputation.</rdfs:comment>
+        <rdfs:range rdf:resource="&qoi;Reputation"/>
+        <rdfs:domain rdf:resource="&prov;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasAge">
+        <rdfs:comment>Describes the value range for the Age.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Age"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasAuthority -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasAuthority">
+        <rdfs:comment>Reference to the certificate Authority.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Authority"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasBandwidth -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasBandwidth">
+        <rdfs:comment>Describes the value range for the Bandwidth.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Bandwidth"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasCompleteness -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasCompleteness">
+        <rdfs:comment>Describes the value range for the Completeness.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Completeness"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasCorrectness -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasCorrectness">
+        <rdfs:comment>Describes the value range for the Correctness.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Correctness"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasDeviation -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasDeviation">
+        <rdfs:comment>Describes the value range for the Deviation.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Deviation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasEncryption -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasEncryption">
+        <rdfs:comment>Reference to Encryption method.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Encryption"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasEnergyConsumption -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasEnergyConsumption">
+        <rdfs:comment>Describes the value range for the EnergyConsumption.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;EnergyConsumption"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasFrequency -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasFrequency">
+        <rdfs:comment>Describes the value range for the Frequency.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Frequency"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasJitter -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasJitter">
+        <rdfs:comment>Describes the value range for the Jitter.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Jitter"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasLatency -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasLatency">
+        <rdfs:comment>Describes the value range for the Latency.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Latency"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasLicenseDefinition -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasLicenseDefinition">
+        <rdfs:comment>Describes the reference to the license defintion.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;LicenceDefinition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasMonetaryConsumption -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasMonetaryConsumption">
+        <rdfs:comment>Describes the value range for the MonetaryConsumption.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;MonetaryConsumption"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasNetworkConsumption -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasNetworkConsumption">
+        <rdfs:comment>Describes the value range for the NetworkConsumption.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;NetworkConsumption"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasPacketLoss -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasPacketLoss">
+        <rdfs:comment>Describes the value range for the PacketLoss.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;PacketLoss"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasPublicKey -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasPublicKey">
+        <rdfs:comment>Reference to the PublicKey.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;PublicKey"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasQueuingType -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasQueuingType">
+        <rdfs:comment>Describes the value range for the QueuingType (e.g. FIFO, LIFO, unordered).</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;QueuingType"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasReputationValue -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasReputationValue">
+        <rdfs:comment>Describes the value range for the Reputation.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Reputation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasResolution -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasResolution">
+        <rdfs:comment>Describes the value range for the Resolution.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Resolution"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasThroughput -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasThroughput">
+        <rdfs:comment>Describes the value range for the Throughput.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Throughput"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#hasVolatility -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;hasVolatility">
+        <rdfs:comment>Describes the value range for the Volatility.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Volatility"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#isOrdered -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;isOrdered">
+        <rdfs:comment>Describes the value range for the Ordered attribute.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;Ordered"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#mayBePublished -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;mayBePublished">
+        <rdfs:comment>Reference to a permission class.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;MayBePublished"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#mayBeUsed -->
+
+    <owl:DatatypeProperty rdf:about="&qoi;mayBeUsed">
+        <rdfs:comment>Reference to a permission class.</rdfs:comment>
+        <rdfs:domain rdf:resource="&qoi;MayBeUsed"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Accuracy -->
+
+    <owl:Class rdf:about="&qoi;Accuracy">
+        <rdfs:label>Accuracy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Quality"/>
+        <rdfs:comment>Category to describe the accuracy of streamed data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Age -->
+
+    <owl:Class rdf:about="&qoi;Age">
+        <rdfs:label>Age</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Timeliness"/>
+        <rdfs:comment>The time an information was created/measured/sensed.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Age cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasAge"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Authority -->
+
+    <owl:Class rdf:about="&qoi;Authority">
+        <rdfs:label>Authority</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Signing"/>
+        <rdfs:comment>Certificate authority.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Bandwidth -->
+
+    <owl:Class rdf:about="&qoi;Bandwidth">
+        <rdfs:label>Bandwidth</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;NetworkPerformance"/>
+        <rdfs:comment>Min/Avrg/Max amount of bandwidth that is required to transport the stream.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Bandwidth cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasBandwidth"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Completeness -->
+
+    <owl:Class rdf:about="&qoi;Completeness">
+        <rdfs:label>Completeness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Accuracy"/>
+        <rdfs:comment>Probability that provided data is within the range of precision and completeness.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Completeness cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasCompleteness"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Completeness can only reach 1 (100%).</rdfs:comment>
+                <owl:onProperty rdf:resource="hasCompleteness"/>
+                <owl:maxCardinality rdf:datatype="&xsd;double">1.0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Confidentiality -->
+
+    <owl:Class rdf:about="&qoi;Confidentiality">
+        <rdfs:label>Confidentiality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Security"/>
+        <rdfs:comment>The degree to which information has attributes that ensure that it is only accessible and interpretable by authorized users in a specific context of use.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Correctness -->
+
+    <owl:Class rdf:about="&qoi;Correctness">
+        <rdfs:label>Correctness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Accuracy"/>
+        <rdfs:comment>The ratio of attribute values compared to expected parameters.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Correctness cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasCorrectness"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Correctness can only reach 1 (100%).</rdfs:comment>
+                <owl:onProperty rdf:resource="hasCorrectness"/>
+                <owl:maxCardinality rdf:datatype="&xsd;double">1.0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Cost -->
+
+    <owl:Class rdf:about="&qoi;Cost">
+        <rdfs:label>Cost</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Quality"/>
+        <rdfs:comment>Category to describe the costs of a data stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Deviation -->
+
+    <owl:Class rdf:about="&qoi;Deviation">
+        <rdfs:label>Deviation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Precision"/>
+        <rdfs:comment>The maximum percentage of deviation from the real value.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Deviation cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasDeviation"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Deviation can only reach 1 (100%).</rdfs:comment>
+                <owl:onProperty rdf:resource="hasDeviation"/>
+                <owl:maxCardinality rdf:datatype="&xsd;double">1.0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Encryption -->
+
+    <owl:Class rdf:about="&qoi;Encryption">
+        <rdfs:label>Encryption</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Security"/>
+        <rdfs:comment>Encryption method, authority for key management.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#EnergyConsumption -->
+
+    <owl:Class rdf:about="&qoi;EnergyConsumption">
+        <rdfs:label>EnergyConsumption</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Cost"/>
+        <rdfs:comment>The amount of energy used to access the steam.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>EnergyConsumption cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasEnergyConsumption"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Frequency -->
+
+    <owl:Class rdf:about="&qoi;Frequency">
+        <rdfs:label>Frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Timeliness"/>
+        <rdfs:comment>Maximum timespan between two data sets.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Frequency cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasFrequency"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Jitter -->
+
+    <owl:Class rdf:about="&qoi;Jitter">
+        <rdfs:label>Jitter</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;NetworkPerformance"/>
+        <rdfs:comment>Deviation from true periodicity of an assumed periodic signal.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Jitter cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasJitter"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Latency -->
+
+    <owl:Class rdf:about="&qoi;Latency">
+        <rdfs:label>Latency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;NetworkPerformance"/>
+        <rdfs:comment>Measure of the time delay between the stream is sent and received in the virtualisation layer.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Latency cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasLatency"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#LicenceDefinition -->
+
+    <owl:Class rdf:about="&qoi;LicenceDefinition">
+        <rdfs:label>LicenceDefinition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Confidentiality"/>
+        <rdfs:comment>Reference to license class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#MayBePublished -->
+
+    <owl:Class rdf:about="&qoi;MayBePublished">
+        <rdfs:label>MayBePublished</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Confidentiality"/>
+        <rdfs:comment>Reference to permission class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#MayBeUsed -->
+
+    <owl:Class rdf:about="&qoi;MayBeUsed">
+        <rdfs:label>MayBeUsed</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Confidentiality"/>
+        <rdfs:comment>Reference to permission class.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#MonetaryConsumption -->
+
+    <owl:Class rdf:about="&qoi;MonetaryConsumption">
+        <rdfs:label>MonetaryConsumption</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Cost"/>
+        <rdfs:comment>Is the usage of the stream free of charge or how much does it cost.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>MonetaryConsumption cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasMonetaryConsumption"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#NetworkConsumption -->
+
+    <owl:Class rdf:about="&qoi;NetworkConsumption">
+        <rdfs:label>NetworkConsumption</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Cost"/>
+        <rdfs:comment>How much traffic is caused by usage of the data source.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>NetworkConsumption cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasNetworkConsumption"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#NetworkPerformance -->
+
+    <owl:Class rdf:about="&qoi;NetworkPerformance">
+        <rdfs:label>NetworkPerformance</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Quality"/>
+        <rdfs:comment>Category to describe QoS values of a data stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Ordered -->
+
+    <owl:Class rdf:about="&qoi;Ordered">
+        <rdfs:label>Ordered</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Queuing"/>
+        <rdfs:comment>Probability that data sets arrive in the defined queuing order.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Ordered cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="isOrdered"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Ordered can only reach 1 (100%).</rdfs:comment>
+                <owl:onProperty rdf:resource="isOrdered"/>
+                <owl:maxCardinality rdf:datatype="&xsd;double">1.0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#PacketLoss -->
+
+    <owl:Class rdf:about="&qoi;PacketLoss">
+        <rdfs:label>PacketLoss</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;NetworkPerformance"/>
+        <rdfs:comment>The probability that a set of data / a packet will not be transported correctly from the source to its sink.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>PacketLoss cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasPacketLoss"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>PacketLoss can only reach 1 (100%).</rdfs:comment>
+                <owl:onProperty rdf:resource="hasPacketLoss"/>
+                <owl:maxCardinality rdf:datatype="&xsd;double">1.0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Precision -->
+
+    <owl:Class rdf:about="&qoi;Precision">
+        <rdfs:label>Precision</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Accuracy"/>
+        <rdfs:comment>Category for parameters describing the precision.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#PublicKey -->
+
+    <owl:Class rdf:about="&qoi;PublicKey">
+        <rdfs:label>PublicKey</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Signing"/>
+        <rdfs:comment>Key to decrypt signatures.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Quality -->
+
+    <owl:Class rdf:about="&qoi;Quality">
+        <rdfs:label>Quality</rdfs:label>
+        <rdfs:comment>The Quality is the description of some values for the quality of a data stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Queuing -->
+
+    <owl:Class rdf:about="&qoi;Queuing">
+        <rdfs:label>Queuing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Quality"/>
+        <rdfs:comment>Describes the order of streaming information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#QueuingType -->
+
+    <owl:Class rdf:about="&qoi;QueuingType">
+        <rdfs:label>QueuingType</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Queuing"/>
+        <rdfs:comment>Queue Type, for example FIFO, LIFO, unordered.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Reputation -->
+
+    <owl:Class rdf:about="&qoi;Reputation">
+        <rdfs:label>Reputation</rdfs:label>
+        <rdfs:comment>Reputation value to measure the trustworthiness of a data stream.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Reputation cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasReputation"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Reputation can only reach 1 (100%).</rdfs:comment>
+                <owl:onProperty rdf:resource="hasReputation"/>
+                <owl:maxCardinality rdf:datatype="&xsd;double">1.0</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Resolution -->
+
+    <owl:Class rdf:about="&qoi;Resolution">
+        <rdfs:label>Resolution</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Precision"/>
+        <rdfs:comment>Resolution detail for the measured value.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Resolution cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasResolution"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Security -->
+
+    <owl:Class rdf:about="&qoi;Security">
+        <rdfs:label>Security</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Quality"/>
+        <rdfs:comment>This cetagory describes security and confidentiality related attributes of a data stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Signing -->
+
+    <owl:Class rdf:about="&qoi;Signing">
+        <rdfs:label>Signing</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Security"/>
+        <rdfs:comment>Used to describe parameters for signing.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Throughput -->
+
+    <owl:Class rdf:about="&qoi;Throughput">
+        <rdfs:label>Throughput</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;NetworkPerformance"/>
+        <rdfs:comment>The amount of useful information sent by the network (e.g. sensor data), taking out the headers and protocol information sent in the network.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Throughput cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasThroughput"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Timeliness -->
+
+    <owl:Class rdf:about="&qoi;Timeliness">
+        <rdfs:label>Timeliness</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Quality"/>
+        <rdfs:comment>Category to describe time related attributes of a data stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UASO/qoi#Volatility -->
+
+    <owl:Class rdf:about="&qoi;Volatility">
+        <rdfs:label>Volatility</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&qoi;Timeliness"/>
+        <rdfs:comment>The amount of time the information remains valid in the context of a particular activity.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <rdfs:comment>Volatility cannot be negative.</rdfs:comment>
+                <owl:onProperty rdf:resource="hasVolatility"/>
+                <owl:minCardinality rdf:datatype="&xsd;double">0.0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

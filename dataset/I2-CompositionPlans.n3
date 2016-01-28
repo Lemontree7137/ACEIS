@@ -1,0 +1,90 @@
+@prefix :        <http://www.insight-centre.org/dataset/SampleEventService#> .
+@prefix emvo:    <http://sense.deri.ie/vocab/emvo#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix ces:     <http://www.insight-centre.org/ces#> .
+@prefix ct:      <http://www.insight-centre.org/citytraffic#> .
+@prefix owls:    <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix up:      <http://www.ict-citypulse.eu/ontologies/userprofile#> .
+@prefix muo:     <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sao:     <http://purl.oclc.org/NET/sao/> .
+@prefix q:       <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix osm:     <http://www.insight-centre.org/ontologies/osm#> .
+
+<EC-CCP-ACP-8d618322-971f-4966-b228-3ed38062ae68-1620>
+      a       ces:ComplexEventService ;
+      owls:presents <EC-CCP-ACP-8d618322-971f-4966-b228-3ed38062ae68-1620-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <EC-CCP-ACP-8d618322-971f-4966-b228-3ed38062ae68-1620>
+              ] .
+
+<EC-CCP-ACP-8d618322-971f-4966-b228-3ed38062ae68-1620-Profile>
+      a       ces:EventProfile ;
+      ces:hasPattern
+              [ a       rdf:Bag , ces:And ;
+                rdf:_1  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "request1_service1"^^xsd:string ;
+                          ces:hasService :UserLocationServiceclone1
+                        ] ;
+                rdf:_2  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "request1_service2"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#214clone1>
+                        ] ;
+                rdf:_3  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "request1_service3"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#337clone0>
+                        ] ;
+                rdf:_4  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "request1_service4"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#280clone2>
+                        ] ;
+                rdf:_5  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "request1_service5"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#218clone1>
+                        ] ;
+                rdf:_6  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "request1_service6"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#216clone1>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "request1_service6" ;
+                          ces:selectedProperty
+                                  :Property-071dbd15-7408-4f47-b38d-4a879a06adec
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "request1_service2" ;
+                          ces:selectedProperty
+                                  :Property-4d189dae-b3b1-41ef-8d77-ed1cd0ece589
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "request1_service1" ;
+                          ces:selectedProperty
+                                  :locationProperty
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "request1_service4" ;
+                          ces:selectedProperty
+                                  :Property-db0b181f-13d7-49c0-a346-0bf4bc257f3a
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "request1_service5" ;
+                          ces:selectedProperty
+                                  :Property-1f81bd5f-9d68-4e47-b198-372b2598a2b9
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "request1_service3" ;
+                          ces:selectedProperty
+                                  :Property-f32f29ef-cb0e-4044-b154-960f769ad53e
+                        ]
+              ] .

@@ -1,0 +1,274 @@
+@prefix : <http://www.insight-centre.org/dataset/SampleEventService#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ces: <http://www.insight-centre.org/ces#> .
+@prefix owls:  <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix owls-g:  <http://www.daml.org/services/owl-s/1.2/Grounding.owl#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix geo: <http://www.insight-centre.org/geolocations#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix emvo:  <http://sense.deri.ie/vocab/emvo#> .
+@prefix muo:   <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix ct:    <http://www.insight-centre.org/citytraffic#> .
+@prefix up: <http://www.ict-citypulse.eu/ontologies/userprofile#>.
+@prefix func: <http://www.ict-citypulse.eu/ontologies/functions#>.
+@prefix osm: <http://www.insight-centre.org/ontologies/osm#> .
+
+:SampleEventRequest a ces:EventRequest;
+		    owls:presents :SampleEventProfile.
+
+:SampleEventProfile rdf:type owls:EventProfile;
+		    ces:hasPattern [ rdf:type  ces:And, rdf:Bag;
+				               rdf:_1 [ a ces:ServiceNode;
+							  ces:hasService :locationRequest;
+							  ces:hasNodeId "request1_service1"^^xsd:string];
+					       rdf:_2 [ a ces:ServiceNode;
+							  ces:hasService :seg1CongestionRequest;
+							   ces:hasNodeId "request1_service2"^^xsd:string];
+ 					       rdf:_3 [ a ces:ServiceNode;
+							  ces:hasService :seg2CongestionRequest;
+							  ces:hasNodeId "request1_service3"^^xsd:string];
+					       rdf:_4 [ a ces:ServiceNode;
+							  ces:hasService :seg3CongestionRequest;
+							   ces:hasNodeId "request1_service4"^^xsd:string];
+					       rdf:_5 [ a ces:ServiceNode;
+							  ces:hasService :seg4CongestionRequest;
+							   ces:hasNodeId "request1_service5"^^xsd:string];
+                          		       rdf:_6 [ a ces:ServiceNode;
+							  ces:hasService :seg5CongestionRequest;
+							   ces:hasNodeId "request1_service6"^^xsd:string];
+				    ces:hasValueAssignment :va1;
+				    ces:hasSelection  [a ces:Selection;
+						     	 ces:hasNodeId  "request1_service1"^^xsd:string;
+     							 ces:selectedProperty :prop-00],
+						      [a ces:Selection;
+						     	 ces:hasNodeId  "request1_service2"^^xsd:string;
+     							 ces:selectedProperty :prop-11],
+						      [a ces:Selection;
+						     	 ces:hasNodeId  "request1_service3"^^xsd:string;
+     							 ces:selectedProperty :prop-21],
+						      [a ces:Selection;
+						     	 ces:hasNodeId  "request1_service4"^^xsd:string;
+     							 ces:selectedProperty :prop-31],
+ 						      [a ces:Selection;
+						     	 ces:hasNodeId  "request1_service5"^^xsd:string;
+     							 ces:selectedProperty :prop-41],
+ 						      [a ces:Selection;
+						     	 ces:hasNodeId  "request1_service6"^^xsd:string;
+     							 ces:selectedProperty :prop-51]];
+				   
+		    ces:hasConstraint   [ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Availability;
+				 	  ces:hasExpression [ emvo:greaterThan "0.9"^^xsd:double]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Accuracy;
+				 	  ces:hasExpression [ emvo:greaterThan "0.9"^^xsd:double]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Reliability;
+				 	  ces:hasExpression [ emvo:greaterThan "0.9"^^xsd:double]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Security;
+				 	  ces:hasExpression [ emvo:greaterThan "4"^^xsd:integer]],
+				  	[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:EnergyConsumption;
+				 	  ces:hasExpression [ 	emvo:hasQuantityUnitOfMeasurement <http://purl.oclc.org/NET/muo/ucum/unit/power/Watt>;
+								emvo:lessThan "10"^^xsd:integer]],
+				  	[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:BandWidthConsumption;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:kbps;
+							      emvo:lessThan "10"^^xsd:integer]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Price;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:Euro;
+							      emvo:lessThan "5"^^xsd:integer]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Latency;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:Millisecond;
+							      emvo:lessThan "50"^^xsd:integer]],
+
+
+					[ rdf:type ces:FunctionalConstraint;
+					  ces:onProperty ct:EstimatedTime;
+					  ces:onEvent :SampleEventRequest;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:Minute;
+							      emvo:lessThan "60"^^xsd:integer]],
+
+					[ rdf:type ces:AppSpecConstraint;
+					  ces:onProperty ct:Location;
+					  ces:onEvent :locationReqeust;
+				 	  ces:hasExpression [ geo:locatesIn geo:Seg1]];
+
+		    ces:hasPreference [ rdf:type ces:QosWeightPreference;
+				      	ces:availabilityWeight "1.0"^^xsd:double;
+					ces:accuracyWeight "1.0"^^xsd:double;
+					ces:reliabilityWeight "1.0"^^xsd:double;
+					ces:securityWeight "1.0"^^xsd:double;
+					ces:energyConsumptionWeight "1.0"^^xsd:double;
+					ces:bandwidthConsumptionWeight "1.0"^^xsd:double;
+					ces:priceWeight "1.0"^^xsd:double;
+					ces:latencyWeight "1.0"^^xsd:double].
+:va1 a ces:ValueAssignment;
+     ces:onVariable [ ces:ofEvent :seg1CongestionRequest;
+		      ces:propertyForVar ct:EstimatedTime],
+		    [ ces:ofEvent :seg2CongestionRequest;
+		      ces:propertyForVar ct:EstimatedTime],
+		    [ ces:ofEvent :seg3CongestionRequest;
+		      ces:propertyForVar ct:EstimatedTime];
+     ces:hasFunction func:sum;
+     ces:producedVariable [ ces:propertyForVar ct:EstimatedTime].
+
+
+:locationRequest    a                    ces:PrimitiveEventService ;
+        owls:presents       :locationRequestProfile ;
+        ssn:observes :prop-00.
+:prop-00  a ct:Location;
+          ssn:isPropertyOf up:user-007 .
+
+:locationRequestProfile  a    ces:EventProfile ;
+         owlssc:serviceCategory  [ a                           owlssc:ServiceCategory ;
+                                  owlssc:serviceCategoryName  "location_report"^^<http://www.w3.org/2001/XMLSchema#string>
+                                ] ;
+
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ].
+
+
+
+:seg1CongestionRequest    a                    ces:PrimitiveEventService , ssn:Sensor;
+        owls:presents        :seg1CongestionRequestProfile ;
+	ssn:observes :prop-11,:prop-12,:prop-13,:prop-14,:prop-15.
+
+:prop-11 a ct:EstimatedTime;
+        ssn:isPropertyOf osm:Node-214.
+:prop-12 a ct:CongestionLevel;
+        ssn:isPropertyOf osm:Node-214 .
+:prop-13 a ct:AvgSpeed;
+        ssn:isPropertyOf osm:Node-214 .
+:prop-14 a ct:MeasureTime;
+        ssn:isPropertyOf osm:Node-214 .
+:prop-15 a ct:VehicleCount;
+        ssn:isPropertyOf osm:Node-214 .
+
+:seg1CongestionRequestProfile  a                  ces:EventProfile ;
+         owlssc:serviceCategory  [ a                           owlssc:ServiceCategory ;
+                                  owlssc:serviceCategoryName  "traffic_report"^^<http://www.w3.org/2001/XMLSchema#string>
+                                ] ;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ];
+	ct:hasReportID          "unknown"^^xsd:string  .
+	
+
+:seg2CongestionRequest    a                    ces:PrimitiveEventService , ssn:Sensor;
+        owls:presents        :seg2CongestionRequestProfile ;
+	ssn:observes :prop-21,:prop-22,:prop-23,:prop-24,:prop-25.
+
+:prop-21 a ct:EstimatedTime;
+        ssn:isPropertyOf osm:Node-337 .
+:prop-22 a ct:CongestionLevel;
+        ssn:isPropertyOf osm:Node-337 .
+:prop-23 a ct:AvgSpeed;
+        ssn:isPropertyOf osm:Node-337 .
+:prop-24 a ct:MeasureTime;
+        ssn:isPropertyOf osm:Node-337 .
+:prop-25 a ct:VehicleCount;
+        ssn:isPropertyOf osm:Node-337 .
+
+:seg2CongestionRequestProfile  a                  ces:EventProfile ;
+         owlssc:serviceCategory  [ a                           owlssc:ServiceCategory ;
+                                  owlssc:serviceCategoryName  "traffic_report"^^<http://www.w3.org/2001/XMLSchema#string>
+                                ] ;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ];
+	ct:hasReportID          "unknown"^^xsd:string  .
+
+:seg3CongestionRequest    a                    ces:PrimitiveEventService , ssn:Sensor;
+        owls:presents        :seg3CongestionRequestProfile ;
+	ssn:observes :prop-31,:prop-32,:prop-33,:prop-34,:prop-35.
+
+:prop-31 a ct:EstimatedTime;
+        ssn:isPropertyOf osm:Node-280.
+:prop-32 a ct:CongestionLevel;
+        ssn:isPropertyOf osm:Node-280.
+:prop-33 a ct:AvgSpeed;
+        ssn:isPropertyOf osm:Node-280.
+:prop-34 a ct:MeasureTime;
+        ssn:isPropertyOf osm:Node-280.
+:prop-35 a ct:VehicleCount;
+        ssn:isPropertyOf osm:Node-280.
+
+:seg3CongestionRequestProfile  a                  ces:EventProfile ;
+         owlssc:serviceCategory  [ a                           owlssc:ServiceCategory ;
+                                  owlssc:serviceCategoryName  "traffic_report"^^<http://www.w3.org/2001/XMLSchema#string>
+                                ] ;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ];
+	ct:hasReportID          "unknown"^^xsd:string  .
+	
+:seg4CongestionRequest    a                    ces:PrimitiveEventService , ssn:Sensor;
+        owls:presents        :seg4CongestionRequestProfile ;
+	ssn:observes :prop-41,:prop-42,:prop-43,:prop-44,:prop-45.
+
+:prop-41 a ct:EstimatedTime;
+        ssn:isPropertyOf osm:Node-218.
+:prop-42 a ct:CongestionLevel;
+        ssn:isPropertyOf osm:Node-218.
+:prop-43 a ct:AvgSpeed;
+        ssn:isPropertyOf osm:Node-218.
+:prop-44 a ct:MeasureTime;
+        ssn:isPropertyOf osm:Node-218.
+:prop-45 a ct:VehicleCount;
+        ssn:isPropertyOf osm:Node-218.
+
+:seg4CongestionRequestProfile  a                  ces:EventProfile ;
+         owlssc:serviceCategory  [ a                           owlssc:ServiceCategory ;
+                                  owlssc:serviceCategoryName  "traffic_report"^^<http://www.w3.org/2001/XMLSchema#string>
+                                ] ;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ];
+	ct:hasReportID          "unknown"^^xsd:string  .
+	
+:seg5CongestionRequest    a                    ces:PrimitiveEventService , ssn:Sensor;
+        owls:presents        :seg5CongestionRequestProfile ;
+	ssn:observes :prop-51,:prop-52,:prop-53,:prop-54,:prop-55.
+
+:prop-51 a ct:EstimatedTime;
+        ssn:isPropertyOf osm:Node-216.
+:prop-52 a ct:CongestionLevel;
+        ssn:isPropertyOf osm:Node-216.
+:prop-53 a ct:AvgSpeed;
+        ssn:isPropertyOf osm:Node-216.
+:prop-54 a ct:MeasureTime;
+        ssn:isPropertyOf osm:Node-216.
+:prop-55 a ct:VehicleCount;
+        ssn:isPropertyOf osm:Node-216.
+
+:seg5CongestionRequestProfile  a                  ces:EventProfile ;
+         owlssc:serviceCategory  [ a                           owlssc:ServiceCategory ;
+                                  owlssc:serviceCategoryName  "traffic_report"^^<http://www.w3.org/2001/XMLSchema#string>
+                                ] ;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ];
+	ct:hasReportID          "unknown"^^xsd:string  .
+	

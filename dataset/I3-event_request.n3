@@ -1,0 +1,106 @@
+@prefix : <http://www.insight-centre.org/SampleEventService#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ces: <http://www.insight-centre.org/ces#> .
+@prefix owls:  <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix owls-g:  <http://www.daml.org/services/owl-s/1.2/Grounding.owl#> .
+@prefix ssn: <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix geo: <http://www.insight-centre.org/geolocations#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix emvo:  <http://sense.deri.ie/vocab/emvo#> .
+@prefix muo:   <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix ct:    <http://www.insight-centre.org/citytraffic#> .
+
+:SampleEventRequest a ces:EventRequest;
+		    owls:presents :SampleEventProfile.
+
+:SampleEventProfile rdf:type owls:EventProfile;
+		    ces:hasPattern [ rdf:type  ces:And, rdf:Bag;
+				               rdf:_1 :locationReqeust;
+					       rdf:_2 :bus1StatusRequest;
+ 					       rdf:_3 :bus2StatusRequest;
+					       rdf:_4 :bus2StatusRequest;
+				    ces:hasValueAssignment :va1];
+		    ces:hasConstraint   [ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Availability;
+				 	  ces:hasExpression [ emvo:greaterThan "0.9"^^xsd:double]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Accuracy;
+				 	  ces:hasExpression [ emvo:greaterThan "0.9"^^xsd:double]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Reliability;
+				 	  ces:hasExpression [ emvo:greaterThan "0.9"^^xsd:double]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Security;
+				 	  ces:hasExpression [ emvo:greaterThan "4"^^xsd:integer]],
+				  	[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:EnergyConsumption;
+				 	  ces:hasExpression [ 	emvo:hasQuantityUnitOfMeasurement <http://purl.oclc.org/NET/muo/ucum/unit/power/Watt>;
+								emvo:lessThan "10"^^xsd:integer]],
+				  	[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:BandWidthConsumption;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:kbps;
+							      emvo:lessThan "10"^^xsd:integer]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Price;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:Euro;
+							      emvo:lessThan "5"^^xsd:integer]],
+					[ rdf:type ces:NFPConstraint;
+					  ces:onProperty ces:Latency;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:Millisecond;
+							      emvo:lessThan "50"^^xsd:integer]],
+
+
+					[ rdf:type ces:FunctionalConstraint;
+					  ces:onProperty prop:Temperature;
+					  ces:onEvent :bus1StatusRequest ;
+				 	  ces:hasExpression [ emvo:hasQuantityUnitOfMeasurement muo:Degree;
+							      emvo:lessThan "25"^^xsd:integer]],
+
+		    ces:hasPreference [ rdf:type ces:QosWeightPreference;
+				      	ces:availabilityWeight "1.0"^^xsd:double;
+					ces:accuracyWeight "1.0"^^xsd:double;
+					ces:reliabilityWeight "1.0"^^xsd:double;
+					ces:securityWeight "1.0"^^xsd:double;
+					ces:energyConsumptionWeight "1.0"^^xsd:double;
+					ces:bandwidthConsumptionWeight "1.0"^^xsd:double;
+					ces:priceWeight "1.0"^^xsd:double;
+					ces:latencyWeight "1.0"^^xsd:double].
+
+
+:locationRequest    a                    ces:PrimitiveEventService ;
+        owls:presents        :locationRequestProfile .
+      
+:locationRequest  a    ces:EventProfile ;
+        owlssc:serviceCategory  :CurrentUserLocation;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ] ;
+        ct:hasReportID          "158324"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+:CurrentUserLocation a ces:StreamEventType;
+		     ces:hasEventFoI profile:user_123;
+		     ces:hasEventProperty ct:Location.
+
+:bus1StatusRequest a                    ces:PrimitiveEventService ;
+        owls:presents        :bus1StatusRequestProfile .
+
+:bus1StatusRequestProfile a                  ces:EventProfile ;
+        owlssc:serviceCategory  :busStatusReport;
+        ces:hasFrequency        [ a                            ces:Frequency ;
+                                  owlssp:sParameter            [ emvo:hasQuantityValue
+                                                    "5.0"^^<http://www.w3.org/2001/XMLSchema#double> ] ;
+                                  owlssp:serviceParameterName  "Frequency"
+                                ] ;
+        ct:hasReportID          "158355"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+:busStatusReport a ces:StreamEventType;
+		 ces:hasEventFoI ct:bus1;
+		  ces:hasEventProperty prop:Temperature , prop:Location, prop:VacancyCount.
+

@@ -1,0 +1,683 @@
+@prefix :        <http://www.insight-centre.org/dataset/SampleEventService#> .
+@prefix prov:    <http://purl.org/NET/provenance.owl#> .
+@prefix tl:      <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix emvo:    <http://sense.deri.ie/vocab/emvo#> .
+@prefix owlssp:  <http://www.daml.org/services/owl-s/1.2/ServiceParameter.owl#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix ces:     <http://www.insight-centre.org/ces#> .
+@prefix ct:      <http://www.insight-centre.org/citytraffic#> .
+@prefix owls:    <http://www.daml.org/services/owl-s/1.2/Service.owl#> .
+@prefix up:      <http://www.ict-citypulse.eu/ontologies/userprofile#> .
+@prefix muo:     <http://purl.oclc.org/NET/muo/ucum/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sao:     <http://purl.oclc.org/NET/sao/> .
+@prefix sce1:    <http://ict-citypulse.eu/experiments/Scenario1/> .
+@prefix q:       <http://www.ict-citypulse.eu/ontologies/streamQoI/Quality> .
+@prefix owlssc:  <http://www.daml.org/services/owl-s/1.2/ServiceCategory.owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix osm:     <http://www.insight-centre.org/ontologies/osm#> .
+@prefix qoi:     <http://ict-citypulse.eu/ontologies/StreamQoI/> .
+
+:Property-310feb71-1806-4433-87c7-d2c36892bb50
+      a       ct:EstimatedTime ;
+      ssn:isPropertyOf :FoI-35f3a6c6-1524-466b-bf5e-08af75c19670 .
+
+:Property-49d7d264-78b6-499c-b002-413950cb8236
+      a       ct:CongestionLevel ;
+      ssn:isPropertyOf :FoI-895d9c82-cc53-46ab-823d-6e5bdbbc607e .
+
+:Property-ee4dc9eb-dd16-4643-abd8-b1758a4d4d53
+      a       ct:EstimatedTime ;
+      ssn:isPropertyOf :FoI-f519fd52-aa57-440f-bb03-69b822de5a76 .
+
+:SampleRequest a ces:CompositionPlan;
+	owls:presents :DummyService-5fe3ab83-ac60-4e4b-a85c-8d80877cf0ee-Profile .
+
+:DummyService-5fe3ab83-ac60-4e4b-a85c-8d80877cf0ee-Profile 
+      ces:hasPattern
+              [ a       rdf:Bag , ces:And ;
+                rdf:_1  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-3efb835d-8f2c-4134-883e-c0c59d15a0da"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#540-sim0>
+                        ] ;
+                rdf:_2  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-80cc3e6f-ad89-409f-bf99-851fc4eabcb6"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#226-sim1>
+                        ] ;
+                rdf:_3  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-5254e095-509f-43e7-a875-e070e8b63d40"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#322-sim2>
+                        ] ;
+                rdf:_4  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-bef072d1-f540-414f-b9d1-f6544fd454e3"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#228-sim0>
+                        ] ;
+                rdf:_5  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-f90f6d3f-6474-4625-bca3-6eaf68739fa9"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#230-sim2>
+                        ] ;
+                rdf:_6  [ a       ces:ServiceNode ;
+                          ces:hasNodeId "ED-61a77600-02c6-418b-9e5f-09746583d1d9"^^xsd:string ;
+                          ces:hasService <http://www.insight-centre.org/dataset/SampleEventService#537-sim3>
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-bef072d1-f540-414f-b9d1-f6544fd454e3" ;
+                          ces:selectedProperty
+                                  :Property-66b8fa48-6cea-447b-9bc9-dde7c12b7f79
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-f90f6d3f-6474-4625-bca3-6eaf68739fa9" ;
+                          ces:selectedProperty
+                                  :Property-bd2d8796-5076-4285-ad67-d4fca824aef5
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-5254e095-509f-43e7-a875-e070e8b63d40" ;
+                          ces:selectedProperty
+                                  :Property-81abead2-730e-46cc-8920-85c9823113ae
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-80cc3e6f-ad89-409f-bf99-851fc4eabcb6" ;
+                          ces:selectedProperty
+                                  :Property-957c43a8-2c0f-42d3-8f82-69c5dee16f11
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-3efb835d-8f2c-4134-883e-c0c59d15a0da" ;
+                          ces:selectedProperty
+                                  :Property-4c3e1955-9ef8-4585-889d-11bcb1d1d545
+                        ] ;
+                ces:hasSelection
+                        [ a       ces:Selection ;
+                          ces:hasNodeId "ED-61a77600-02c6-418b-9e5f-09746583d1d9" ;
+                          ces:selectedProperty
+                                  :Property-8d812886-820c-4d80-97b7-10e284d9b245
+                        ]
+              ] .
+
+<http://www.insight-centre.org/dataset/SampleEventService#322-sim2>
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes :Property-81abead2-730e-46cc-8920-85c9823113ae , :Property-443ec61d-f3e5-463e-b4fb-70ba33e90c80 , :Property-3a84212f-34d2-47d3-9586-22cde0b43a52 , :Property-e6b47f25-f4d6-4398-a205-e5f58971b30e , :Property-49d7d264-78b6-499c-b002-413950cb8236 ;
+      owls:presents <http://www.insight-centre.org/dataset/SampleEventService#322-sim2-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'187456'>
+              ] .
+
+:Property-81abead2-730e-46cc-8920-85c9823113ae
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-895d9c82-cc53-46ab-823d-6e5bdbbc607e .
+
+:Property-8d812886-820c-4d80-97b7-10e284d9b245
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-feba917e-5d9e-415b-afc1-c5f72534902e .
+
+:Property-41b871a5-6b78-47fb-9f6f-132dee813ef1
+      a       ct:EstimatedTime ;
+      ssn:isPropertyOf :FoI-feba917e-5d9e-415b-afc1-c5f72534902e .
+
+:Property-216c999c-8b6b-4df1-8bc0-b6bb40fa562d
+      a       ct:CongestionLevel ;
+      ssn:isPropertyOf :FoI-feba917e-5d9e-415b-afc1-c5f72534902e .
+
+<http://www.insight-centre.org/dataset/SampleEventService#540-sim0>
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes :Property-269ddc45-ee1b-42b4-b8a0-a27ebc647943 , :Property-4be0e2bf-2239-4eeb-8378-4685c998bb3e , :Property-f57c96fd-02e1-4866-b928-566160cf6d26 , :Property-4c3e1955-9ef8-4585-889d-11bcb1d1d545 , :Property-fe839528-79b7-4f33-bb5a-87cc01a5af6f ;
+      owls:presents <http://www.insight-centre.org/dataset/SampleEventService#540-sim0-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'203530'>
+              ] .
+
+<http://www.insight-centre.org/dataset/SampleEventService#322-sim2-Profile>
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] ;
+      ces:hasAccuracy
+              [ a       ces:Accuracy ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9179570139631419"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Accuracy"
+              ] ;
+      ces:hasFrequency
+              [ a       ces:Frequency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8410479259885122"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Frequency"
+              ] ;
+      ces:hasLatency
+              [ a       ces:Latency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "50"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Latency"
+              ] ;
+      ces:hasPrice
+              [ a       ces:Price ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "202"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Price"
+              ] ;
+      ces:hasReliability
+              [ a       ces:Reliability ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9939248921769817"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Reliability"
+              ] ;
+      ces:hasSecurity
+              [ a       ces:Security ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "3"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Security"
+              ] .
+
+:FoI-895d9c82-cc53-46ab-823d-6e5bdbbc607e
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.13203209461566"^^xsd:double ;
+      ct:hasEndLongitude "10.157658842922274"^^xsd:double ;
+      ct:hasStartLatitude "56.125743621869944"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.15788067857352"^^xsd:double .
+
+:Property-3a84212f-34d2-47d3-9586-22cde0b43a52
+      a       ct:EstimatedTime ;
+      ssn:isPropertyOf :FoI-895d9c82-cc53-46ab-823d-6e5bdbbc607e .
+
+:Property-bd2d8796-5076-4285-ad67-d4fca824aef5
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-35f3a6c6-1524-466b-bf5e-08af75c19670 .
+
+:Property-6393d4d3-51de-40d2-9203-55db0f6397d9
+      a       ct:MeasureTime ;
+      ssn:isPropertyOf :FoI-feba917e-5d9e-415b-afc1-c5f72534902e .
+
+:Property-124c3afb-f41c-41a9-9f39-e2533bf53228
+      a       ct:CongestionLevel ;
+      ssn:isPropertyOf :FoI-f519fd52-aa57-440f-bb03-69b822de5a76 .
+
+:Property-5280543d-efc7-4674-aa79-72c6755287ae
+      a       ct:EstimatedTime ;
+      ssn:isPropertyOf :FoI-1587a587-240e-45c8-8bab-0884b4a4b180 .
+
+<http://www.insight-centre.org/dataset/SampleEventService#537-sim3>
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes :Property-8d812886-820c-4d80-97b7-10e284d9b245 , :Property-d7e6381a-9683-4a1d-99a6-297614a9151f , :Property-41b871a5-6b78-47fb-9f6f-132dee813ef1 , :Property-216c999c-8b6b-4df1-8bc0-b6bb40fa562d , :Property-6393d4d3-51de-40d2-9203-55db0f6397d9 ;
+      owls:presents <http://www.insight-centre.org/dataset/SampleEventService#537-sim3-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'201908'>
+              ] .
+
+:FoI-feba917e-5d9e-415b-afc1-c5f72534902e
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.125743621869944"^^xsd:double ;
+      ct:hasEndLongitude "10.15788067857352"^^xsd:double ;
+      ct:hasStartLatitude "56.118198830180894"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.148353690807198"^^xsd:double .
+
+:Property-957c43a8-2c0f-42d3-8f82-69c5dee16f11
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-1587a587-240e-45c8-8bab-0884b4a4b180 .
+
+<http://www.insight-centre.org/dataset/SampleEventService#226-sim1-Profile>
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] ;
+      ces:hasAccuracy
+              [ a       ces:Accuracy ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.865530461284447"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Accuracy"
+              ] ;
+      ces:hasFrequency
+              [ a       ces:Frequency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.4207755081404435"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Frequency"
+              ] ;
+      ces:hasLatency
+              [ a       ces:Latency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "34"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Latency"
+              ] ;
+      ces:hasPrice
+              [ a       ces:Price ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "174"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Price"
+              ] ;
+      ces:hasReliability
+              [ a       ces:Reliability ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8821750816971821"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Reliability"
+              ] ;
+      ces:hasSecurity
+              [ a       ces:Security ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "3"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Security"
+              ] .
+
+:Property-d7e6381a-9683-4a1d-99a6-297614a9151f
+      a       ct:AvgSpeed ;
+      ssn:isPropertyOf :FoI-feba917e-5d9e-415b-afc1-c5f72534902e .
+
+:Property-443ec61d-f3e5-463e-b4fb-70ba33e90c80
+      a       ct:MeasureTime ;
+      ssn:isPropertyOf :FoI-895d9c82-cc53-46ab-823d-6e5bdbbc607e .
+
+<http://www.insight-centre.org/dataset/SampleEventService#230-sim2-Profile>
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] ;
+      ces:hasAccuracy
+              [ a       ces:Accuracy ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8147062188262152"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Accuracy"
+              ] ;
+      ces:hasFrequency
+              [ a       ces:Frequency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9196157666716029"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Frequency"
+              ] ;
+      ces:hasLatency
+              [ a       ces:Latency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "45"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Latency"
+              ] ;
+      ces:hasPrice
+              [ a       ces:Price ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "182"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Price"
+              ] ;
+      ces:hasReliability
+              [ a       ces:Reliability ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8969838670805317"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Reliability"
+              ] ;
+      ces:hasSecurity
+              [ a       ces:Security ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "3"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Security"
+              ] .
+
+:Property-3e8342bc-3f8e-49ef-baec-be6cf514333a
+      a       ct:AvgSpeed ;
+      ssn:isPropertyOf :FoI-35f3a6c6-1524-466b-bf5e-08af75c19670 .
+
+<http://www.insight-centre.org/dataset/SampleEventService#537-sim3-Profile>
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] ;
+      ces:hasAccuracy
+              [ a       ces:Accuracy ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8302529189342882"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Accuracy"
+              ] ;
+      ces:hasFrequency
+              [ a       ces:Frequency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8871071917246767"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Frequency"
+              ] ;
+      ces:hasLatency
+              [ a       ces:Latency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "29"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Latency"
+              ] ;
+      ces:hasPrice
+              [ a       ces:Price ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "42"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Price"
+              ] ;
+      ces:hasReliability
+              [ a       ces:Reliability ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9499761877565901"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Reliability"
+              ] ;
+      ces:hasSecurity
+              [ a       ces:Security ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "1"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Security"
+              ] .
+
+<http://www.insight-centre.org/dataset/SampleEventService#226-sim1>
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes :Property-ec3d16e3-d6d6-4546-b662-6c302e2be293 , :Property-957c43a8-2c0f-42d3-8f82-69c5dee16f11 , :Property-62dd0bfe-2b97-4d75-a50d-b1684eeeebb8 , :Property-26a1b91c-fae5-4cce-8d31-8ed8c6dea070 , :Property-5280543d-efc7-4674-aa79-72c6755287ae ;
+      owls:presents <http://www.insight-centre.org/dataset/SampleEventService#226-sim1-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'180627'>
+              ] .
+
+:FoI-35f3a6c6-1524-466b-bf5e-08af75c19670
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.14051551675728"^^xsd:double ;
+      ct:hasEndLongitude "10.154338145998054"^^xsd:double ;
+      ct:hasStartLatitude "56.13203209461566"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.157658842922274"^^xsd:double .
+
+:Property-bfa37be5-934d-43c9-9bf4-b6dfe90e64bd
+      a       ct:AvgSpeed ;
+      ssn:isPropertyOf :FoI-f519fd52-aa57-440f-bb03-69b822de5a76 .
+
+<http://www.insight-centre.org/dataset/SampleEventService#540-sim0-Profile>
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] ;
+      ces:hasAccuracy
+              [ a       ces:Accuracy ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9651002122328071"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Accuracy"
+              ] ;
+      ces:hasFrequency
+              [ a       ces:Frequency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.23409366484138971"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Frequency"
+              ] ;
+      ces:hasLatency
+              [ a       ces:Latency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "72"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Latency"
+              ] ;
+      ces:hasPrice
+              [ a       ces:Price ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "268"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Price"
+              ] ;
+      ces:hasReliability
+              [ a       ces:Reliability ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.8799338688975492"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Reliability"
+              ] ;
+      ces:hasSecurity
+              [ a       ces:Security ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "1"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Security"
+              ] .
+
+:Property-c7c8ddb7-30bc-439d-b492-7e6d61fc0b8a
+      a       ct:MeasureTime ;
+      ssn:isPropertyOf :FoI-35f3a6c6-1524-466b-bf5e-08af75c19670 .
+
+:Property-4be0e2bf-2239-4eeb-8378-4685c998bb3e
+      a       ct:CongestionLevel ;
+      ssn:isPropertyOf :FoI-13fcf5b0-8e2b-4a52-8f84-fd18cb426e3f .
+
+:FoI-13fcf5b0-8e2b-4a52-8f84-fd18cb426e3f
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.118198830180894"^^xsd:double ;
+      ct:hasEndLongitude "10.148353690807198"^^xsd:double ;
+      ct:hasStartLatitude "56.1102508220387"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.153714822090137"^^xsd:double .
+
+:Property-70fa7e43-f418-47a4-8021-3a2f503b231c
+      a       ct:CongestionLevel ;
+      ssn:isPropertyOf :FoI-35f3a6c6-1524-466b-bf5e-08af75c19670 .
+
+<http://www.insight-centre.org/dataset/SampleEventService#228-sim0-Profile>
+      a       ces:EventProfile ;
+      owlssc:serviceCategory
+              [ a       owlssc:ServiceCategory ;
+                owlssc:serviceCategoryName
+                        "traffic_report"^^xsd:string
+              ] ;
+      ces:hasAccuracy
+              [ a       ces:Accuracy ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9646937311302217"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Accuracy"
+              ] ;
+      ces:hasFrequency
+              [ a       ces:Frequency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.7424177310108877"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Frequency"
+              ] ;
+      ces:hasLatency
+              [ a       ces:Latency ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "11"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Latency"
+              ] ;
+      ces:hasPrice
+              [ a       ces:Price ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "163"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Price"
+              ] ;
+      ces:hasReliability
+              [ a       ces:Reliability ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "0.9912067821019802"^^xsd:double
+                        ] ;
+                owlssp:serviceParameterName
+                        "Reliability"
+              ] ;
+      ces:hasSecurity
+              [ a       ces:Security ;
+                owlssp:sParameter
+                        [ emvo:hasQuantityValue
+                                  "3"^^xsd:int
+                        ] ;
+                owlssp:serviceParameterName
+                        "Security"
+              ] .
+
+<http://www.insight-centre.org/dataset/SampleEventService#230-sim2>
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes :Property-c7c8ddb7-30bc-439d-b492-7e6d61fc0b8a , :Property-70fa7e43-f418-47a4-8021-3a2f503b231c , :Property-3e8342bc-3f8e-49ef-baec-be6cf514333a , :Property-310feb71-1806-4433-87c7-d2c36892bb50 , :Property-bd2d8796-5076-4285-ad67-d4fca824aef5 ;
+      owls:presents <http://www.insight-centre.org/dataset/SampleEventService#230-sim2-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'180735'>
+              ] .
+
+<http://www.insight-centre.org/dataset/SampleEventService#228-sim0>
+      a       ssn:Sensor , ces:PrimitiveEventService ;
+      ssn:observes :Property-bfa37be5-934d-43c9-9bf4-b6dfe90e64bd , :Property-66b8fa48-6cea-447b-9bc9-dde7c12b7f79 , :Property-0aa8c045-9f90-4366-bb29-e27a82c5ebb0 , :Property-124c3afb-f41c-41a9-9f39-e2533bf53228 , :Property-ee4dc9eb-dd16-4643-abd8-b1758a4d4d53 ;
+      owls:presents <http://www.insight-centre.org/dataset/SampleEventService#228-sim0-Profile> ;
+      owls:supports
+              [ a       ces:HttpGrounding ;
+                ces:httpService <http://ckan.projects.cavi.dk/api/action/datastore_search_sql?sql=SELECT%20*%20from%20%22d7e6c54f-dc2a-4fae-9f2a-b036c804837d%22%20WHERE%20'REPORT_ID'%20=%20'180681'>
+              ] .
+
+:Property-26a1b91c-fae5-4cce-8d31-8ed8c6dea070
+      a       ct:MeasureTime ;
+      ssn:isPropertyOf :FoI-1587a587-240e-45c8-8bab-0884b4a4b180 .
+
+:Property-f57c96fd-02e1-4866-b928-566160cf6d26
+      a       ct:MeasureTime ;
+      ssn:isPropertyOf :FoI-13fcf5b0-8e2b-4a52-8f84-fd18cb426e3f .
+
+:Property-269ddc45-ee1b-42b4-b8a0-a27ebc647943
+      a       ct:AvgSpeed ;
+      ssn:isPropertyOf :FoI-13fcf5b0-8e2b-4a52-8f84-fd18cb426e3f .
+
+:FoI-f519fd52-aa57-440f-bb03-69b822de5a76
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.148242094184255"^^xsd:double ;
+      ct:hasEndLongitude "10.149874309192683"^^xsd:double ;
+      ct:hasStartLatitude "56.14051551675728"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.154338145998054"^^xsd:double .
+
+:Property-0aa8c045-9f90-4366-bb29-e27a82c5ebb0
+      a       ct:MeasureTime ;
+      ssn:isPropertyOf :FoI-f519fd52-aa57-440f-bb03-69b822de5a76 .
+
+:FoI-1587a587-240e-45c8-8bab-0884b4a4b180
+      a       ssn:FeatureOfInterest ;
+      ct:hasEndLatitude "56.16018043015113"^^xsd:double ;
+      ct:hasEndLongitude "10.143520804893456"^^xsd:double ;
+      ct:hasStartLatitude "56.148242094184255"^^xsd:double ;
+      ct:hasStartLongitude
+              "10.149874309192683"^^xsd:double .
+
+:Property-66b8fa48-6cea-447b-9bc9-dde7c12b7f79
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-f519fd52-aa57-440f-bb03-69b822de5a76 .
+
+:Property-62dd0bfe-2b97-4d75-a50d-b1684eeeebb8
+      a       ct:CongestionLevel ;
+      ssn:isPropertyOf :FoI-1587a587-240e-45c8-8bab-0884b4a4b180 .
+
+:Property-ec3d16e3-d6d6-4546-b662-6c302e2be293
+      a       ct:AvgSpeed ;
+      ssn:isPropertyOf :FoI-1587a587-240e-45c8-8bab-0884b4a4b180 .
+
+:Property-4c3e1955-9ef8-4585-889d-11bcb1d1d545
+      a       ct:VehicleCount ;
+      ssn:isPropertyOf :FoI-13fcf5b0-8e2b-4a52-8f84-fd18cb426e3f .
+
+:Property-fe839528-79b7-4f33-bb5a-87cc01a5af6f
+      a       ct:EstimatedTime ;
+      ssn:isPropertyOf :FoI-13fcf5b0-8e2b-4a52-8f84-fd18cb426e3f .
+
+:Property-e6b47f25-f4d6-4398-a205-e5f58971b30e
+      a       ct:AvgSpeed ;
+      ssn:isPropertyOf :FoI-895d9c82-cc53-46ab-823d-6e5bdbbc607e .
