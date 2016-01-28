@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 
 import org.insight_centre.aceis.eventmodel.EventDeclaration;
 import org.insight_centre.aceis.eventmodel.EventPattern;
+import org.insight_centre.aceis.eventmodel.NodeRemovalException;
 import org.insight_centre.aceis.eventmodel.QosVector;
 import org.insight_centre.aceis.eventmodel.WeightVector;
 import org.insight_centre.aceis.utils.MapUtils;
@@ -29,6 +30,18 @@ public class UtilityRanker {
 			results.add(e.getKey());
 		return results;
 
+	}
+
+	public static List<EventDeclaration> rankEdsWithAcc(List<EventDeclaration> eds) throws CloneNotSupportedException,
+			NodeRemovalException {
+		Map<EventDeclaration, Double> accMap = new HashMap<EventDeclaration, Double>();
+		for (EventDeclaration ed : eds)
+			accMap.put(ed, ed.getExternalQos().getAccuracy());
+		MapUtils.sortByValue(accMap);
+		List<EventDeclaration> results = new ArrayList<EventDeclaration>();
+		for (Entry<EventDeclaration, Double> e : accMap.entrySet())
+			results.add(e.getKey());
+		return results;
 	}
 
 	public static List<EventDeclaration> rankEds(List<EventDeclaration> eds, QosVector constraint, WeightVector weight)

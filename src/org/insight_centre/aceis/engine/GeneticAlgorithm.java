@@ -106,7 +106,7 @@ public class GeneticAlgorithm {
 
 	/**
 	 * @param ccps
-	 * @return
+	 * @return ccps after cross over
 	 * @throws Exception
 	 * 
 	 *             cross over the genes
@@ -294,7 +294,7 @@ public class GeneticAlgorithm {
 	 * @param secondEp
 	 * @param encodings
 	 * @param ccps
-	 * @return
+	 * @return a set of paired replaceable node ids
 	 * @throws Exception
 	 * 
 	 *             finds randomly a pair of replaceable nodes (crossover points)
@@ -443,7 +443,7 @@ public class GeneticAlgorithm {
 	}
 
 	/**
-	 * @return
+	 * @return inital population
 	 * @throws Exception
 	 * 
 	 *             initializes the population for evolution
@@ -471,7 +471,7 @@ public class GeneticAlgorithm {
 
 	/**
 	 * @param initialPopulation
-	 * @return
+	 * @return selected population
 	 * @throws Exception
 	 */
 	private List<EventPattern> selection(List<EventPattern> initialPopulation) throws Exception {
@@ -558,7 +558,7 @@ public class GeneticAlgorithm {
 	 * @param e
 	 * @param encodings
 	 * @param ccps
-	 * @return
+	 * @return patterns after swapping genes
 	 * @throws Exception
 	 * 
 	 *             exchanges genes according to the chosen crossover point

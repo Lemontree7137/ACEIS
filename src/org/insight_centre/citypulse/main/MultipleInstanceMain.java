@@ -44,6 +44,7 @@ import org.insight_centre.aceis.utils.ServiceGenerator;
 import org.insight_centre.aceis.utils.test.PerformanceMonitor;
 import org.insight_centre.citypulse.commons.data.json.DataFederationRequest;
 import org.insight_centre.citypulse.commons.data.json.DataFederationResult;
+import org.insight_centre.citypulse.server.ConflictResolutionServerEndpoint;
 import org.insight_centre.citypulse.server.MultipleEngineServerEndpoint;
 import org.insight_centre.citypulse.server.SubscriberServerEndpoint2;
 import org.slf4j.Logger;
@@ -162,13 +163,15 @@ public class MultipleInstanceMain {
 
 	private void startServer() throws Exception {
 		ACEISScheduler.smode = this.smode;
-		// ACEISScheduler.initACEISScheduler(cqelsCnt, csparqlCnt, dataset);
+		ACEISScheduler.initACEISScheduler(cqelsCnt, csparqlCnt, dataset);
 		// Server server = new Server(this.hostIp, this.port, "/", null, MultipleEngineServerEndpoint.class);
 		// Server server2 = new Server(this.hostIp, 8002, "/", null, SubscriberServerEndpoint2.class);
+		// Server server3 = new Server(this.hostIp, 8020, "/", null, ConflictResolutionServerEndpoint.class);
 		Session session = null;
 		try {
 			// server.start();
 			// server2.start();
+			// server3.start();
 			session = sendOldRequest();
 			// sendRequest(step);
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

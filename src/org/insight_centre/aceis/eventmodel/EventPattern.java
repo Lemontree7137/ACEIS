@@ -87,7 +87,7 @@ public class EventPattern implements Cloneable, Comparable<EventPattern> {
 	}
 
 	/**
-	 * @return
+	 * @return aggregated Qos vector
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 
@@ -1057,7 +1057,7 @@ public class EventPattern implements Cloneable, Comparable<EventPattern> {
 
 	/**
 	 * @param rootId
-	 * @return
+	 * @return whether the merging function results in a modification.
 	 * @throws Exception
 	 * 
 	 *             merges direct sub trees for a node

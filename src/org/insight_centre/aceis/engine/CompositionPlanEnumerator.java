@@ -171,7 +171,7 @@ public class CompositionPlanEnumerator {
 	}
 
 	/**
-	 * @return
+	 * @return list of abstract composition plans
 	 * @throws Exception
 	 * 
 	 *             creates abstract composition plans (ACP) for the given query, an ACP is a composition plan that do
@@ -250,7 +250,7 @@ public class CompositionPlanEnumerator {
 
 	/**
 	 * @param acp
-	 * @return
+	 * @return list of concrete composition plans
 	 * @throws Exception
 	 * 
 	 *             creates all possible concrete composition plans (CCPs) for a given ACP. A CCP is concrete in the
@@ -291,7 +291,7 @@ public class CompositionPlanEnumerator {
 
 	/**
 	 * @param acps
-	 * @return
+	 * @return list of concrete composition plans
 	 * @throws Exception
 	 * 
 	 *             creates concrete composition plans (CCPs) for a list of ACPs.
@@ -443,7 +443,7 @@ public class CompositionPlanEnumerator {
 
 	/**
 	 * @param epId
-	 * @return
+	 * @return event reusability hierarchy
 	 * @throws Exception
 	 * 
 	 *             finds reusable nodes by querying the hierarchy
@@ -545,7 +545,7 @@ public class CompositionPlanEnumerator {
 	 * @param ep
 	 * @param reusabilities
 	 * @param parts
-	 * @return
+	 * @return partially composed ACPs
 	 * @throws Exception
 	 * 
 	 *             creates a list of ACPs for the query from top-down

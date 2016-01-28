@@ -86,7 +86,7 @@ public class Comparator {
 	/**
 	 * @param ep1
 	 * @param ep2
-	 * @return
+	 * @return whether is directly reusable
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 
@@ -103,7 +103,7 @@ public class Comparator {
 	 * @param ep1
 	 * @param ep2
 	 * @param rootOpt
-	 * @return
+	 * @return list of direct sub trees
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 
@@ -127,7 +127,7 @@ public class Comparator {
 	 * @param ep1
 	 * @param ep2
 	 * @param rootOpt
-	 * @return
+	 * @return whether two patterns has same direct sub-trees
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 
@@ -235,7 +235,7 @@ public class Comparator {
 	/**
 	 * @param ep1
 	 * @param ep2
-	 * @return
+	 * @return whether two patterns are in-directly reusable
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 
@@ -332,7 +332,7 @@ public class Comparator {
 	/**
 	 * @param ep1
 	 * @param ep2
-	 * @return
+	 * @return if two canonical patterns have identical meanings
 	 * @throws Exception
 	 * 
 	 *             checks if the canonical event patterns of two event patterns are substitutes to each other
@@ -426,7 +426,7 @@ public class Comparator {
 	/**
 	 * @param ep1
 	 * @param ep2
-	 * @return
+	 * @return reusability code
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 
@@ -510,7 +510,7 @@ public class Comparator {
 	/**
 	 * @param dstList
 	 * @param parentEp
-	 * @return
+	 * @return sorted DSTs
 	 * @throws CloneNotSupportedException
 	 * @throws NodeRemovalException
 	 * 

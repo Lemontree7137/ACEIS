@@ -1,8 +1,11 @@
 package org.insight_centre.aceis.observations;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import com.hp.hpl.jena.rdf.model.Model;
 
 public class SensorObservation {
 	protected String srvId, foi, pName, pType;
@@ -27,6 +30,11 @@ public class SensorObservation {
 		this.sysTimestamp = new Date();
 	}
 
+	public static List<SensorObservation> readObservationFromSnapshot(Model m) {
+		return null;
+
+	}
+
 	public SensorObservation(String sensor, Object value) {
 		// super();
 		this.srvId = sensor;
@@ -36,6 +44,12 @@ public class SensorObservation {
 
 	public String getFoi() {
 		return foi;
+	}
+
+	public boolean valueEquals(SensorObservation so) {
+		if (this.getpType().equals(so.getpType()) && this.getValue().equals(so.getValue()))
+			return true;
+		return false;
 	}
 
 	public String getpName() {
