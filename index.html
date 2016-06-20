@@ -116,7 +116,7 @@ private void startServer() throws Exception {
 	Session session = null;
 	try {
 		server.start();
-		server2.start();
+		//server2.start();
 		server3.start();
 		
 		// for local tests
@@ -138,7 +138,64 @@ private void startServer() throws Exception {
 	}
   		
   	</code></pre>
-<h3>
+  	<p>At run-time, when a new message is received by the main server endpoint (<code>MultipleEngineServerEndpoint.java</code>), the <code>onMessage</code> method is invoked, which takes the following actions:
+  		</p>
+<h3><pre><code>
+	@OnMessage
+public String onMessage(String message, Session session) throws Exception {
+	if (message.equals("quit")) {
+		try {
+			// this.
+			session.close(new CloseReason(CloseCodes.NORMAL_CLOSURE, "Subscriber ended"));
+			// ACEISEngine.getSubscriptionManager().deregisterAllEventRequest();
+			// cachedResult = null;
+		} catch (Exception e) {
+			logger.error("Error occur while stopping streams.");
+			e.printStackTrace();
+			session.getBasicRemote().sendText("FAULT: " + e.getMessage());
+			logger.info("Sending error msg: " + e.getMessage());
+			// SubscriptionManagerFactory.getSubscriptionManager().g.destroy();
+			// ACEISEngine.getSubscriptionManager().csparqlEngine = new CsparqlEngineImpl();
+			// ACEISEngine.getSubscriptionManager().csparqlEngine.initialize(true);
+			// cachedResult = null;
+			throw new RuntimeException(e);
+		}
+	} else if (message.contains("stop")) {
+		try {
+			ACEISEngine engine = engineMap.get(session);
+			SubscriptionManagerFactory.getSubscriptionManager().deregisterEventRequest(sessionPlanMap.get(session),
+					false);
+			// ACEISEngine engine=SubscriptionManagerFactory.getSubscriptionManager().
+			// ACEISEngine.getSubscriptionManager().deregisterAllEventRequest();
+			// cachedResult = null;
+		} catch (Exception e) {
+			logger.error("Error occur while stopping streams.");
+			e.printStackTrace();
+			session.getBasicRemote().sendText("FAULT: Error occur while stopping streams. " + e.getMessage());
+			logger.info("Sending error msg: " + e.getMessage());
+			// ACEISEngine.getSubscriptionManager().csparqlEngine.destroy();
+			// ACEISEngine.getSubscriptionManager().csparqlEngine = new CsparqlEngineImpl();
+			// ACEISEngine.getSubscriptionManager().csparqlEngine.initialize(true);
+			// cachedResult = null;
+		}
+	} else {
+		try {
+			// logger.info("Handling single query");
+			this.parseMsg(message, session);
+			if (!MultipleInstanceMain.getMonitor().isStarted()) {
+				new Thread(MultipleInstanceMain.getMonitor()).start();
+				logger.info("Monitor thread started.");
+			}
+			// registerQuery(jr, session);
+		} catch (Exception e) {
+			e.printStackTrace();
+			session.getBasicRemote().sendText("FAULT: " + e.getMessage());
+			logger.info("Sending error msg: " + e.getMessage());
+		}
+	}
+	return null;
+}
+	</code></pre>
 <a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h3>
 
 <p>Javadoc for ACEIS can be found at <a href="doc/index.html">here</a></p>
