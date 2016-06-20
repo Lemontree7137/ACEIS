@@ -63,21 +63,76 @@
 <p>A sample main class can be found at "org.insight_centre.citypulse.main", below we provide some basic examples and explanations of the code, in order to demonstrate how it works.</p>
 <pre><code>
   public static void main(String[] args) throws Exception {
-  Properties prop = new Properties();
-  File in = new File("aceis.properties");
-		FileInputStream fis = new FileInputStream(in);
-		prop.load(fis);
-		fis.close();
-		HashMap<String, String> parameters = new HashMap<String, String>();
-		for (String s : args) {
-			parameters.put(s.split("=")[0], s.split("=")[1]);
-		}
-		MultipleInstanceMain mim = new MultipleInstanceMain(prop, parameters);
-
-		mim.startServer();
-		// mim.sendRequest();
+  	//load the property file
+  	Properties prop = new Properties();
+  	File in = new File("aceis.properties");
+	FileInputStream fis = new FileInputStream(in);
+	prop.load(fis);
+	fis.close();
+	
+	//load run-time parameters
+	HashMap<String, String> parameters = new HashMap<String, String>();
+	for (String s : args) {
+		parameters.put(s.split("=")[0], s.split("=")[1]);
+	}
+	
+	//start server
+	MultipleInstanceMain mim = new MultipleInstanceMain(prop, parameters);
+	mim.startServer();
 	}
   </code></pre>
+  <p>configurable properties ("aceis.properties"):
+  <ul>
+<li>hostIp: the IP address of the server hosting data federation server,</li>
+<li>port: the main port used by the data federation server,</li>
+<li>ontology:  the folder storing the ontology files (used only if local dataset files are used),</li>
+<li>streams: the folder storing the stream data files for simulation (used only if operating on simulated streams),</li>
+<li>dataset: the location of stream meta-data, could be a local file or an URI for the virtuoso endpoint provided by the resource management component,</li>
+<li>request: the location of sample test queries.</li>
+</ul>
+  </p>
+  <p>run-time parameters:
+  <ul>
+  <li>cqelsCnt: number of CQELS engine instances,</li>
+<li>csparqlCnt: number of CSPARQL engine instances,</li>
+<li>smode: load balancing strategy, could be "elastic", "balancedLatency", "balancedQueries", "rotation" or "elastic",</li>
+<li>qCnt: number of concurrent queries (used only in simulation mode),</li>
+<li>step: interval between registering new queries (used only in simulation mode),</li>
+<li>query: path to the query file (used only in simulation mode),</li>
+<li>duration: life-time of the ACEIS server instance, 0 means indefinite.</li>
+  	</ul>
+  	</p>
+  	<p>The <code>startServer()</code> method has the following steps:</p>
+  	<pre><code>
+  		private void startServer() throws Exception {
+		ACEISScheduler.smode = this.smode;
+		ACEISScheduler.initACEISScheduler(cqelsCnt, csparqlCnt, dataset);
+		Server server = new Server(this.hostIp, this.port, "/", null, MultipleEngineServerEndpoint.class);
+		Server server2 = new Server(this.hostIp, 8002, "/", null, SubscriberServerEndpoint2.class);
+		Server server3 = new Server(this.hostIp, 8020, "/", null, ConflictResolutionServerEndpoint.class);
+		Session session = null;
+		try {
+			server.start();
+			server2.start();
+			server3.start();
+			// session = sendOldRequest();
+			// sendRequest(step);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			System.out.print("Please press a key to stop the server.");
+			reader.readLine();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			logger.info("Stopping Server.");
+			session.close();
+			// server.stop();
+			System.exit(0);
+		}
+
+	}
+  		
+  	</code></pre>
 <h3>
 <a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h3>
 
