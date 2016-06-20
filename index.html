@@ -60,8 +60,24 @@
 <h3>
 <a id="userguide" class="anchor" href="#userguide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User Guide</h3>
 
-<p>A sample main class can be found at "org.insight_centre.citypulse.main"</p>
+<p>A sample main class can be found at "org.insight_centre.citypulse.main", below we provide some basic examples and explanations of the code, in order to demonstrate how it works.</p>
+<code>
+  public static void main(String[] args) throws Exception {
+		Properties prop = new Properties();
+		File in = new File("aceis.properties");
+		FileInputStream fis = new FileInputStream(in);
+		prop.load(fis);
+		fis.close();
+		HashMap<String, String> parameters = new HashMap<String, String>();
+		for (String s : args) {
+			parameters.put(s.split("=")[0], s.split("=")[1]);
+		}
+		MultipleInstanceMain mim = new MultipleInstanceMain(prop, parameters);
 
+		mim.startServer();
+		// mim.sendRequest();
+	}
+  </code>
 <h3>
 <a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h3>
 
