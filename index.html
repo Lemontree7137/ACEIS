@@ -141,52 +141,38 @@ private void startServer() throws Exception {
   	<p>At run-time, when a new message is received by the main server endpoint (<code>MultipleEngineServerEndpoint.java</code>), the <code>onMessage</code> method is invoked, which takes the following actions:
   		</p>
 <h3><pre><code>
-	@OnMessage
+@OnMessage
 public String onMessage(String message, Session session) throws Exception {
-	if (message.equals("quit")) {
+	if (message.equals("quit")) {// when message contains "quit", close the session for this client
 		try {
-			// this.
 			session.close(new CloseReason(CloseCodes.NORMAL_CLOSURE, "Subscriber ended"));
-			// ACEISEngine.getSubscriptionManager().deregisterAllEventRequest();
-			// cachedResult = null;
 		} catch (Exception e) {
 			logger.error("Error occur while stopping streams.");
 			e.printStackTrace();
 			session.getBasicRemote().sendText("FAULT: " + e.getMessage());
 			logger.info("Sending error msg: " + e.getMessage());
-			// SubscriptionManagerFactory.getSubscriptionManager().g.destroy();
-			// ACEISEngine.getSubscriptionManager().csparqlEngine = new CsparqlEngineImpl();
-			// ACEISEngine.getSubscriptionManager().csparqlEngine.initialize(true);
-			// cachedResult = null;
 			throw new RuntimeException(e);
 		}
-	} else if (message.contains("stop")) {
+	} else if (message.contains("stop")) {// when message contains "stop", deregister the query but keep the session
 		try {
 			ACEISEngine engine = engineMap.get(session);
 			SubscriptionManagerFactory.getSubscriptionManager().deregisterEventRequest(sessionPlanMap.get(session),
 					false);
-			// ACEISEngine engine=SubscriptionManagerFactory.getSubscriptionManager().
-			// ACEISEngine.getSubscriptionManager().deregisterAllEventRequest();
-			// cachedResult = null;
 		} catch (Exception e) {
 			logger.error("Error occur while stopping streams.");
 			e.printStackTrace();
 			session.getBasicRemote().sendText("FAULT: Error occur while stopping streams. " + e.getMessage());
 			logger.info("Sending error msg: " + e.getMessage());
-			// ACEISEngine.getSubscriptionManager().csparqlEngine.destroy();
-			// ACEISEngine.getSubscriptionManager().csparqlEngine = new CsparqlEngineImpl();
-			// ACEISEngine.getSubscriptionManager().csparqlEngine.initialize(true);
-			// cachedResult = null;
 		}
-	} else {
+	} else {// process normal queries
 		try {
 			// logger.info("Handling single query");
 			this.parseMsg(message, session);
+			//
 			if (!MultipleInstanceMain.getMonitor().isStarted()) {
 				new Thread(MultipleInstanceMain.getMonitor()).start();
 				logger.info("Monitor thread started.");
 			}
-			// registerQuery(jr, session);
 		} catch (Exception e) {
 			e.printStackTrace();
 			session.getBasicRemote().sendText("FAULT: " + e.getMessage());
@@ -196,6 +182,76 @@ public String onMessage(String message, Session session) throws Exception {
 	return null;
 }
 	</code></pre>
+	<p> The method <code>parseMsg()</code> is used to analyse the received message </p>
+	<pre><code>
+private void parseMsg(String msgStr, Session session) throws Exception {
+	// generate an EventRequest from the msgStr in Json format
+	EventRequest request = new Gson().fromJson(msgStr, EventRequest.class);
+	logger.info("Engine type: " + request.getEngineType());
+	
+	// choose proper RSP engine instance for this request
+	ACEISEngine engine = ACEISScheduler.getBestEngineInstance(request.getEngineType());
+	engineMap.put(session, engine);
+	
+	if (request.isContinuous()) {
+		// if the request asks for continuous results, register the query on the RSP engine
+		this.registerQueryFromEventRequest(request, session);
+	} else { 
+		// if it is a "one-time" request, return the snapshot for the relevant sensor data using the data-fetching server.
+		logger.info("Parsing data fetching request.");
+		List<String> sids = new ArrayList<String>();
+		for (EventDeclaration e : request.getEp().getEds())
+			sids.add(e.getServiceId());
+		DataFederationResult result = new DataFederationResult();
+		for (String s : sids) {
+			logger.info("sid: " + s);
+			EventDeclaration ed = engine.getRepo().getEds().get(s);
+			HashMap<String, String> snapshot = VirtuosoDataManager.getSnapShot(ed);
+			for (Entry<String, String> en : snapshot.entrySet()) {
+				result.getResult().put(en.getKey(), new ArrayList<String>());
+				result.getResult().get(en.getKey()).add(en.getValue());
+			}
+		}
+		String resultStr = new Gson().toJson(result);
+		logger.info("sending response: " + resultStr);
+		session.getBasicRemote().sendText(resultStr);
+	}
+}
+		</code></pre>
+<p> The event requests are modelled in package <code>org.insight_centre.aceis.eventmodel</code>, which has the following components:
+<b>EventRequest:</b><ul>
+<li>ep: the query pattern</li>
+<li>constraint: the qos constraint vector, can be null</li>
+<li>weight: the qos weight vector, can be null</li>
+<li>continuous: specify if it is a continous query or not, to be set 'true' in this scenario</li>
+<li>engineType: type of RDF processing engine to be used, can be 'CQELS' or 'CSPARQL'</li>
+<li>aggOp: aggregation operator, can be avg, min or max</li></ul>
+<b>EventPattern:</b><ul>
+<li>eds: list of event declarations, i.e., sensors used in the query</li>
+<li>eos: list of event operators, to be set to 'and' in this scenario</li>
+<li>filters: list of filters, empty in this scenario</li>
+<li>ID: random pattern id</li>
+<li>idCnt: initial size of pattern, to be ignored</li>
+<li>temporalMap: temporal relation between event operators and event declarations (id strings as keys and values, same for provenancemap)</li>
+<li>provenanceMap: provenance relation between event operators and event declarations</li>
+<li>isQuery: indicate if the pattern is a query or not, to be set to 'true' in the request</li>
+<li>timewindow: the time window of the pattern in milliseconds, can be set to a recommended '3000' as in the sample</li>
+<li>trafficDemand: placeholder for network traffic estimation, to be set to '0' in the request</li>
+<li>selections: selected properties from sensors</li></ul>
+
+<b>EventDeclaration:</b><ul>
+<li>distance: placeholder field, ignore</li>
+<li>eventType: domain specific sensor type</li>
+<li>foi: feature of interest, for traffic sensors the format is (startlatitude,startlongituede-endlatitude,endlongitude)</li>
+<li>nodeId: random sensorId</li></ul>
+
+<b>Selection:</b><ul>
+<li>propertyName: random name/id of the property </li>
+<li>providedBy: the id of the provider for this property</li>
+<li>foi: the foi of the property</li>
+<li>propertyType: the domain specific type of the property</li>
+<li>originalED: the object reference of the provider, i.e., the event declaration/sensor</li></ul>
+		</p>
 <a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h3>
 
 <p>Javadoc for ACEIS can be found at <a href="doc/index.html">here</a></p>
