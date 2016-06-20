@@ -140,7 +140,7 @@ private void startServer() throws Exception {
   	</code></pre>
   	<p>At run-time, when a new message is received by the main server endpoint (<code>MultipleEngineServerEndpoint.java</code>), the <code>onMessage</code> method is invoked, which takes the following actions:
   		</p>
-<h3><pre><code>
+<pre><code>
 @OnMessage
 public String onMessage(String message, Session session) throws Exception {
 	if (message.equals("quit")) {// when message contains "quit", close the session for this client
