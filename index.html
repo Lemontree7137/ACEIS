@@ -60,7 +60,7 @@
 <h3>
 <a id="userguide" class="anchor" href="#userguide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User Guide</h3>
 
-<p>A sample main class can be found at "org.insight_centre.citypulse.main", below we provide some basic examples and explanations of the code, in order to demonstrate how it works.</p>
+<p>A sample main class can be found at "org.insight_centre.citypulse.main.MultipleInstanceMain.java", below we provide some basic examples and explanations of the code, in order to demonstrate how it works.</p>
 <pre><code>
   public static void main(String[] args) throws Exception {
   	//load the property file
@@ -102,32 +102,37 @@
 <li>duration: life-time of the ACEIS server instance, 0 means indefinite.</li>
   	</ul>
   	</p>
-  	<p>The <code>startServer()</code> method has the following steps:</p>
+  	<p>The <code>startServer()</code> method in the constructor of <code>MultipleInstanceMain</code> has the following steps:</p>
   	<pre><code>
-  		private void startServer() throws Exception {
-		ACEISScheduler.smode = this.smode;
-		ACEISScheduler.initACEISScheduler(cqelsCnt, csparqlCnt, dataset);
-		Server server = new Server(this.hostIp, this.port, "/", null, MultipleEngineServerEndpoint.class);
-		Server server2 = new Server(this.hostIp, 8002, "/", null, SubscriberServerEndpoint2.class);
-		Server server3 = new Server(this.hostIp, 8020, "/", null, ConflictResolutionServerEndpoint.class);
-		Session session = null;
-		try {
-			server.start();
-			server2.start();
-			server3.start();
-			// session = sendOldRequest();
-			// sendRequest(step);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			System.out.print("Please press a key to stop the server.");
-			reader.readLine();
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
-		} finally {
-			logger.info("Stopping Server.");
-			session.close();
-			// server.stop();
-			System.exit(0);
+private void startServer() throws Exception {
+	// Initialize ACEIS engine(s) using ACEISScheduler
+	ACEISScheduler.smode = this.smode;
+	ACEISScheduler.initACEISScheduler(cqelsCnt, csparqlCnt, dataset);
+	
+	// start websocket servers
+	Server server = new Server(this.hostIp, this.port, "/", null, MultipleEngineServerEndpoint.class); // main server endpoint
+	//Server server2 = new Server(this.hostIp, 8002, "/", null, SubscriberServerEndpoint2.class); // obselete server for mobile travel planner
+	Server server3 = new Server(this.hostIp, 8020, "/", null, ConflictResolutionServerEndpoint.class); // conflict resolution server endpoint
+	Session session = null;
+	try {
+		server.start();
+		server2.start();
+		server3.start();
+		
+		// for local tests
+		// sendRequest(step);
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("Please press a key to stop the server.");
+		reader.readLine();
+	} catch (Exception e) {
+		e.printStackTrace();
+		throw new RuntimeException(e);
+	} finally {
+		logger.info("Stopping Server.");
+		session.close();
+		server.stop();
+		System.exit(0);
 		}
 
 	}
